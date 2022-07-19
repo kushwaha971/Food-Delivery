@@ -1,5 +1,7 @@
 import React from "react";
-import { Typography, Box, styled, Button } from "@mui/material";
+import { Typography, Box, styled, Button, Dialog } from "@mui/material";
+import { useState } from "react";
+import PlaceOrder from "../PlaceOrder";
 
 const ItemDetailed = styled(Box)(({ theme }) => ({
   ".header": {
@@ -25,7 +27,26 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
 }));
 
 function CartPrice({ countCartItem, totalAmount }) {
+  const[order,setOrder] = useState(true)
   return (
+    <>
+    {/* ...................................................................................... */}
+    <Dialog
+        fullScreen
+        open={!order} 
+        onClose={() => {
+          setOrder(order);
+        }}
+        //  TransitionComponent={Transition}
+      >
+        <PlaceOrder 
+          
+          order={order}
+          setOrder={setOrder}
+        />
+      </Dialog>
+{/* ...................................................................................... */}
+    
     <ItemDetailed>
       <Box>
         <Box className="header" style={{ borderBottom: "1px solid #f0f0f0" }}>
@@ -77,6 +98,7 @@ function CartPrice({ countCartItem, totalAmount }) {
           </Typography>
         </Box>
         <Button
+        onClick={() => {setOrder(!order)}}
           className="placeOrder"
           variant="contained"
           sx={{
@@ -90,6 +112,7 @@ function CartPrice({ countCartItem, totalAmount }) {
         </Button>
       </Box>
     </ItemDetailed>
+    </>
   );
 }
 
