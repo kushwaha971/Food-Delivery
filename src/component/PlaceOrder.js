@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Autocomplete,
   Box,
   Button,
   Card,
@@ -41,11 +40,11 @@ const OrderStyle = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "25px",
-    marginTop: "50px",
+    padding: "15px",
+    marginTop: "90px",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
-      padding: "25px",
+      padding: "15px",
     },
   },
   ".inputBox": {
@@ -140,12 +139,12 @@ function PlaceOrder({order,setOrder}) {
                   className="inputBox"
                 />
                 {/* <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={states}
-      sx={{ width: 300 }}
-      label="Select State" />
-    /> */}
+                  disablePortal
+                  id="combo-box-demo"
+                  options={states}
+                  sx={{ width: 300 }}
+                  label="Select State" />
+                /> */}
                 <TextField
                   id="outlined-basic"
                   label="State"
