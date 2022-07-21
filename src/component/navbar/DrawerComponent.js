@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "./../images/BellaLogo.svg";
+import logo from "./../images/BellaLogo.png";
 import ClearIcon from "@mui/icons-material/Clear";
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";

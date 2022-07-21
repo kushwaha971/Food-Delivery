@@ -10,7 +10,7 @@ import {
   Button,
   Toolbar,
 } from "@mui/material";
-import logo from "./images/BellaLogo.svg";
+import logo from "./images/BellaLogo.png";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -134,16 +134,15 @@ function Footer() {
         >
           <TextStyle>
             <Typography variant="h2" align="center" className="slogan">
-              Download the app now.
+               Will be live in August 2022
             </Typography>
             {isMatch ? (
               <Typography variant="h4" align="center" className="download">
-                Most calendars are designed for teams.
+                It’s time to score on hunger with imperceptible prices
               </Typography>
             ) : (
               <Typography variant="h4" align="center" className="download">
-                Available on your favorite store. Start your premium experience
-                now
+                Keep visiting to for craziest opening day offers
               </Typography>
             )}
           </TextStyle>
@@ -161,9 +160,9 @@ function Footer() {
                     fontWeight: "700",
                   }}
                 >
-                  Buy now
+                  Order Soon
                 </Button>
-                <Button
+                {/* <Button
                   color="inherit"
                   variant="outlined"
                   className="btn1"
@@ -176,7 +175,7 @@ function Footer() {
                   }}
                 >
                   Try for free
-                </Button>
+                </Button> */}
               </Typography>
             ) : (
               <Typography align="center">
@@ -191,9 +190,9 @@ function Footer() {
                     fontWeight: "700",
                   }}
                 >
-                  Playstore
+                  Order Soon
                 </Button>
-                <Button
+                {/* <Button
                   color="inherit"
                   variant="outlined"
                   className="btn1"
@@ -206,7 +205,7 @@ function Footer() {
                   }}
                 >
                   App Store
-                </Button>
+                </Button> */}
               </Typography>
             )}
           </Btn>
@@ -243,7 +242,7 @@ function Footer() {
                 fontWeight: "700",
               }}
             >
-              Copywright 2020 Bella Onojie.com
+             Copywright 2022 Pluto India Foods
             </Typography>
           )}
         </Toolbar>
@@ -262,7 +261,7 @@ function Footer() {
               marginBottom: '35px',
             }}
           >
-            Copywright 2020 Bella Onojie.com
+            Copywright 2022 Pluto India Foods
           </Typography>
         ) : ( 
           ""
