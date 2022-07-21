@@ -137,7 +137,7 @@ function Hero() {
       >
         <TextStyle>
           <Typography variant="h3" align="center" className="food">
-            Food app
+            Pluto
           </Typography>
 
           <Typography variant="h1" align="center" className="slogan">
