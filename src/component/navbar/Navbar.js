@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-scroll";
 import React, { useState } from "react";
-import logo from "./../images/BellaLogo.svg";
+import logo from "./../images/BellaLogo.png";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cardss from "../Cardss";
 import Hero from "./../Hero";
@@ -143,7 +143,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     </Link>
                   </Button>
                   
-                  <Button>
+                  {/* <Button>
                     <Link
                       exact
                       to="product"
@@ -152,7 +152,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     >
                       Products
                     </Link>
-                  </Button>
+                  </Button> */}
                   <Button>
                     <Link
                       exact
@@ -163,7 +163,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       Contact
                     </Link>
                   </Button>
-                  <Button>
+                  {/* <Button>
                     <Link
                       className="links"
                       onClick={() => setShow(!show)}
@@ -171,7 +171,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     >
                       <ShoppingCartIcon  style={{fill: "orange" , fontSize: 30}}/> 
                     </Link>
-                  </Button>
+                  </Button> */}
                   </ListItemButton>
                   </List>
                 </Drawer>
@@ -211,9 +211,9 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
       </NavbarStyle>
 {/* ........................................................................................................... */}
       <section id="home">{<Hero />}</section>
-      <section id="product">
+      {/* <section id="product">
         {<Cardss Item={Item} cart={cart} setCart={setCart} />}
-      </section>
+      </section> */}
       <section id="footer">{<Footer />}</section>
     </>
   );
