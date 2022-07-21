@@ -137,6 +137,7 @@ function Hero() {
         sx={{ marginTop: "90px", marginBottom:'200px' }}
       >
         <TextStyle>
+
           {/* <Typography variant="h3" align="center" className="food">
             Pluto
           </Typography> */}
