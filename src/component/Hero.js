@@ -83,8 +83,9 @@ const TextStyle = styled(Box)(({ theme }) => ({
 
 const Btn = styled(Box)(({ theme }) => ({
   ".btn": {
-    padding: "10px 90px",
-    width: "36px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    // width: "100px",
     borderRadius: "30px",
     margin: theme.spacing(2),
     marginTop: theme.spacing(12),
@@ -110,14 +111,14 @@ const Mobile = styled(Box)(({ theme }) => ({
   ".mob1": {
     position: "absolute",
     margin: "auto",
-    top: "470px",
+    top: "350px",
     left: "0",
     right: "0",
     textAlign: "center",
     zIndex: "1",
 
     [theme.breakpoints.down("md")]: {
-      top: "520px",
+      top: "380px",
       width: "350px"
     },
   },
@@ -133,19 +134,20 @@ function Hero() {
       <Paper
         className="paperContainer"
         elevation={0}
-        sx={{ marginTop: "90px" }}
+        sx={{ marginTop: "90px", marginBottom:'200px' }}
       >
         <TextStyle>
-          <Typography variant="h3" align="center" className="food">
+
+          {/* <Typography variant="h3" align="center" className="food">
             Pluto
-          </Typography>
+          </Typography> */}
 
           <Typography variant="h1" align="center" className="slogan">
-            Why stay hungry when you can order form Bella Onojie
+            Why stay hungry when you can order form Pluto
           </Typography>
 
           <Typography variant="h5" align="center" className="download">
-            Download the bella onoje’s food app now on
+            Coming Soon in Varanasi with lowest price & best quality in city
           </Typography>
         </TextStyle>
 
@@ -156,17 +158,17 @@ function Hero() {
               className="btn"
               sx={btnStyle}
             >
-              Playstore
+              Order Soon
             </Button>
-            <Button
+            {/* <Button
               color="inherit"
               variant="outlined"
               className="btn1"
               sx={btnStyle}
             >
-              AppStore
-            </Button>
-          </Typography>
+              Order Now
+        </Button>*/}
+          </Typography> 
         </Btn>
       </Paper>
       <Mobile>

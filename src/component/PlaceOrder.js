@@ -16,7 +16,7 @@ import {
 
 import React from "react";
 import cardImage from "./images/card_img.png";
-import logo from "./images/BellaLogo.svg";
+import logo from "./images/BellaLogo.png";
 
 const NavbarStyle = styled(Box)(({ theme }) => ({
   ".links": {

@@ -16,7 +16,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CheckIcon from "@mui/icons-material/Check";
 import { Box } from "@mui/system";
 import React from "react";
-import logo from "./images/BellaLogo.svg";
+import logo from "./images/BellaLogo.png";
 
 const cardNameStyle = {
   fontFamily: "Roboto",
