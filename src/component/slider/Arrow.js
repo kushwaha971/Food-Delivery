@@ -4,8 +4,6 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, styled } from "@mui/material";
 
 const ArrowStyle = styled(Box)(({theme})=>({
-    // posititon: 'absolute',
-    
     ".arrow":{
         marginTop:'-330px',
         marginBottom:'330px',
