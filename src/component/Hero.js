@@ -134,7 +134,7 @@ function Hero() {
       <Paper
         className="paperContainer"
         elevation={0}
-        sx={{ marginTop: "90px", marginBottom:'200px' }}
+        sx={{ marginTop: "90px", marginBottom:'265px' }}
       >
         <TextStyle>
 

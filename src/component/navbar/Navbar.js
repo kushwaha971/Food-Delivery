@@ -25,6 +25,7 @@ import Footer from "../Footer";
 
 import ClearIcon from "@mui/icons-material/Clear";
 import Cart from "../cart/Cart";
+import Slider from "../slider/Slider";
 
 const drwerStyle = {
   marginTop: "25px",
@@ -211,9 +212,9 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
       </NavbarStyle>
 {/* ........................................................................................................... */}
       <section id="home">{<Hero />}</section>
-      {/* <section id="product">
-        {<Cardss Item={Item} cart={cart} setCart={setCart} />}
-      </section> */}
+       <section id="product">
+        {<Slider />}
+      </section> 
       <section id="footer">{<Footer />}</section>
     </>
   );
