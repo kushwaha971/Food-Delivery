@@ -1,11 +1,12 @@
 import { Box, styled, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import Dot from "./Dot";
 import sliderItem from "./SliderItem";
 
 import Arrow from "./Arrow";
+import { useEffect } from "react";
 const SliderStyle = styled(Box)(({ theme }) => ({
-  marginTop: '250px',
+  // marginTop: '250px',
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -16,7 +17,7 @@ const SliderStyle = styled(Box)(({ theme }) => ({
   ".containerSlider":{
       width: '450px',
       [theme.breakpoints.down('md')]:{
-        width:'600px',
+        width:'400px',
       }
   },
   ".benefits": {
@@ -63,9 +64,20 @@ const SliderStyle = styled(Box)(({ theme }) => ({
 }));
 
 const len = sliderItem.length - 1;
+const length = sliderItem.length;
 
 function Slider() {
+
   const [activeIndex, setActiveIndex] = useState(0);
+
+useEffect(()=>{
+  let slider = setInterval(()=>{
+    setActiveIndex((activeIndex+1)%length)
+  },2000)
+  return () =>{
+    clearInterval(slider);
+  }
+},[activeIndex])
 
   const prevSlide= () =>{
     setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
@@ -99,8 +111,7 @@ function Slider() {
               <img
                  align="center" 
                 className="Img"
-                src={item.imageSrc}
-             
+                src={item.imageSrc} alt = ""
                 style={{ height: "250px", width: "280px"}}
               />
               <Typography className="benefits" align="center">

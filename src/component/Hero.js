@@ -85,7 +85,6 @@ const Btn = styled(Box)(({ theme }) => ({
   ".btn": {
     paddingLeft: "20px",
     paddingRight: "20px",
-    // width: "100px",
     borderRadius: "30px",
     margin: theme.spacing(2),
     marginTop: theme.spacing(12),
