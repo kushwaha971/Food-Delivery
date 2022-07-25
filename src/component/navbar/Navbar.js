@@ -16,13 +16,11 @@ import {
 } from "@mui/material";
 import { Link } from "react-scroll";
 import React, { useState } from "react";
-import logo from "./../images/BellaLogo.png";
+ import logo from "./../images/BellaLogo.png";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Cardss from "../Cardss";
 import Hero from "./../Hero";
 import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../Footer";
-
 import ClearIcon from "@mui/icons-material/Clear";
 import Cart from "../cart/Cart";
 import Slider from "../slider/Slider";
@@ -59,7 +57,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    //.................................................... Implementation of Dialog MUI........................................................................
+    //....................................... Implementation of Dialog MUI..................................................................
     <>
       <Dialog
         fullScreen
