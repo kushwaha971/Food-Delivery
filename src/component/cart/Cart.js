@@ -3,11 +3,11 @@ import {
   Typography,
   Box,
   styled,
-  Button,
   AppBar,
   Toolbar,
   Link,
 } from "@mui/material";
+import { Button } from "@cred/neopop-web/lib/components";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import EmptyCart from "./EmptyCart";
 import CartPrice from "./CartPrice";
@@ -109,12 +109,21 @@ function Cart({ Item, cart, setCart, show, setShow }) {
       <>
         <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
           <Toolbar>
-            <Button>
+            <Button
+             variant="primary"
+                        kind="flat"
+                        size="big"
+                        colorMode="light">
               <Link className="links" onClick={() => setShow(!show)}>
                 <ArrowBackIcon style={{ fill: "black", fontSize: "30px" }} />
               </Link>
             </Button>
-            <Button>
+            <Button
+             variant="primary"
+                        kind="flat"
+                        size="big"
+                        colorMode="light"
+                        >
               <Typography
                 sx={{
                   fontFamily: "Roboto",
