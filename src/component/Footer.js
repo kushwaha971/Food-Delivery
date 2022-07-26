@@ -9,11 +9,15 @@ import {
   useTheme,
   Button,
   Toolbar,
+  Dialog,
 } from "@mui/material";
 import logo from "./images/BellaLogo.png";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { useState } from "react";
+import CustomerDetail from "./CustomerDetail";
+
 
 const FooterStyle = styled(Box)(({ theme }) => ({
   ".paperContainer": {
@@ -99,7 +103,6 @@ const Btn = styled(Box)(({ theme }) => ({
 
 const Ftr = styled(Box)(({ theme }) => ({
   ".content": {
-    
     marginLeft: "20px",
     marginRight: "25px",
   },
@@ -122,6 +125,7 @@ const Ftr = styled(Box)(({ theme }) => ({
 }));
 
 function Footer() {
+  const [customerdetail,setCustomerdetail] = useState(true);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -162,7 +166,8 @@ function Footer() {
                 >
                   Order Soon
                 </Button>
-                {/* <Button
+                 <Button
+                 onClick={() => setCustomerdetail(!customerdetail)}
                   color="inherit"
                   variant="outlined"
                   className="btn1"
@@ -174,8 +179,8 @@ function Footer() {
                     fontWeight: "700",
                   }}
                 >
-                  Try for free
-                </Button> */}
+                  Form
+                </Button> 
               </Typography>
             ) : (
               <Typography align="center">
@@ -192,7 +197,8 @@ function Footer() {
                 >
                   Order Soon
                 </Button>
-                {/* <Button
+                <Button
+                onClick={() => setCustomerdetail(!customerdetail)}
                   color="inherit"
                   variant="outlined"
                   className="btn1"
@@ -204,8 +210,8 @@ function Footer() {
                     fontWeight: "700",
                   }}
                 >
-                  App Store
-                </Button> */}
+                  form
+                </Button>
               </Typography>
             )}
           </Btn>
@@ -266,7 +272,14 @@ function Footer() {
         ) : ( 
           ""
         )}
+        <Dialog
+        open = {!customerdetail}
+        onClose = {() => {setCustomerdetail(!customerdetail)}}
+        >
+        <CustomerDetail customerdetail ={customerdetail} setCustomerdetail={setCustomerdetail}/>
+        </Dialog>
       </Ftr>
+      
     </div>
   );
 }

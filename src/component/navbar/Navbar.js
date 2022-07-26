@@ -11,13 +11,13 @@ import {
   useMediaQuery,
   useTheme,
   IconButton,
-  Button,
   Dialog,
 } from "@mui/material";
+import { Button } from "@cred/neopop-web/lib/components";
 import { Link } from "react-scroll";
 import React, { useState } from "react";
- import logo from "./../images/BellaLogo.png";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import logo from "./../images/BellaLogo.png";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Hero from "./../Hero";
 import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../Footer";
@@ -43,9 +43,10 @@ const NavbarStyle = styled(Box)(({ theme }) => ({
     fontWeight: "600",
     textTransform: "capitalize",
     color: "#252B42",
-    letterSpacing: "0.2px",
+    letterSpacing: "0px",
     fontStyle: "normal",
     textDecoration: "none",
+    
     [theme.breakpoints.between("md", "lg")]: {
       marginLeft: theme.spacing(5),
     },
@@ -61,13 +62,13 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
     <>
       <Dialog
         fullScreen
-        open={!show} 
+        open={!show}
         onClose={() => {
           setShow(show);
         }}
         //  TransitionComponent={Transition}
       >
-        <Cart 
+        <Cart
           Item={Item}
           cart={cart}
           setCart={setCart}
@@ -75,7 +76,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
           setShow={setShow}
         />
       </Dialog>
-{/* ....................................................................................................... */}
+      {/* ....................................................................................................... */}
       <NavbarStyle>
         <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
           <Toolbar>
@@ -83,7 +84,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
               <img src={logo} width={182} height={64} alt="" />
             </Typography>
 
-  {/**....................... Implementation of Drawer........................................... */}
+            {/*....................... Implementation of Drawer........................................... */}
             {isMatch ? (
               <>
                 <IconButton
@@ -96,7 +97,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                 >
                   <MenuIcon />
                 </IconButton>
-               
+
                 <Drawer
                   open={openDrawer}
                   onClick={() => setOpenDrawer(!openDrawer)}
@@ -105,44 +106,61 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     sx: { width: "100%", cursor: "pointer", color: "#252B42" },
                   }}
                 >
-             
-          
-          <List
-            PaperProps={{
-              sx: { width: "100%" },
-            }}>
-
-                  <AppBar
-                    color="inherit"
-                    elevation={0}
-                    sx={{ padding: "10px" }}
+                  <List
+                    PaperProps={{
+                      sx: { width: "100%" },
+                    }}
                   >
-                    <Toolbar>
-                      <Typography variant="title">
-                        <img src={logo} width={182} height={64} alt="" />
-                      </Typography>
-                      <ClearIcon sx={{ marginLeft: "auto" }} />
-                    </Toolbar>
-                  </AppBar>
-                    <ListItemButton
-              style={{
-                direction: "flex",
-                flexDirection: "column",
-                marginTop: "100px",
-              }}
-            >
-                  <Button>
-                    <Link
-                      exact
-                      to="home"
-                      onClick={() => setOpenDrawer(!openDrawer)}
-                      style={drwerStyle}
+                    <AppBar
+                      color="inherit"
+                      elevation={0}
+                      sx={{ padding: "10px" }}
                     >
-                      Home
-                    </Link>
-                  </Button>
-                  
-                  {/* <Button>
+                      <Toolbar>
+                        <Typography variant="title">
+                          <img src={logo} width={182} height={64} alt="" />
+                        </Typography>
+                        <ClearIcon sx={{ marginLeft: "auto" }} />
+                      </Toolbar>
+                    </AppBar>
+                    <ListItemButton
+                     disableElevation
+            disableRipple
+            sx={{
+              ml: 1,
+              "&.MuiButtonBase-root:hover": {
+                bgcolor: "transparent"
+              }
+            }}
+                      style={{
+                        direction: "flex",
+                        flexDirection: "column",
+                        marginTop: "100px",
+                        
+                      }}
+                    >
+                      <Button
+                        variant="primary"
+                        kind="flat"
+                        size="big"
+                        colorMode="light"
+                      >
+                        <Link
+                          exact
+                          to="home"
+                          onClick={() => setOpenDrawer(!openDrawer)}
+                          style={drwerStyle}
+                        >
+                          Home
+                        </Link>
+                      </Button>
+
+                      {/* <Button
+                         variant="primary"
+                        kind="flat"
+                       size="big"
+                        colorMode="light"
+                        >
                     <Link
                       exact
                       to="product"
@@ -152,17 +170,27 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       Products
                     </Link>
                   </Button> */}
-                  <Button>
-                    <Link
-                      exact
-                      to="footer"
-                      onClick={() => setOpenDrawer(!openDrawer)}
-                      style={drwerStyle}
-                    >
-                      Contact
-                    </Link>
-                  </Button>
-                  {/* <Button>
+                      <Button
+                         variant="primary"
+                        kind="flat"
+                        size="big"
+                        colorMode="light"
+                        >
+                        <Link
+                          exact
+                          to="footer"
+                          onClick={() => setOpenDrawer(!openDrawer)}
+                          style={drwerStyle}
+                        >
+                          Contact
+                        </Link>
+                      </Button>
+                      {/* <Button
+                         variant="primary"
+                        kind="flat"
+                        size="small"
+                        colorMode="light"
+                        >
                     <Link
                       className="links"
                       onClick={() => setShow(!show)}
@@ -171,35 +199,59 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       <ShoppingCartIcon  style={{fill: "orange" , fontSize: 30}}/> 
                     </Link>
                   </Button> */}
-                  </ListItemButton>
+                    </ListItemButton>
                   </List>
                 </Drawer>
-  {/* ........................................................................................................ */}
+                {/* ........................................................................................................ */}
               </>
             ) : (
               <>
-  {/*......................................... Implementation of NavBar........................................ */}
-                <Tabs  dislabled sx={{ marginLeft: "auto", marginRight: "100px" }} >
-               
-                  <Button >
+                {/*......................................... Implementation of NavBar........................................ */}
+                <Tabs
+                  dislabled
+                  sx={{ marginLeft: "auto", marginRight: "80px" }}
+                >
+                  <Button
+                    variant="primary"
+                    kind="flat"
+                    size="small"
+                    colorMode="light"
+                  >
                     <Link exact to="home" className="links">
                       Home
                     </Link>
                   </Button>
-                  <Button>
+                  <Button
+                    variant="primary"
+                    kind="flat"
+                    size="small"
+                    colorMode="light"
+                  >
                     <Link exact to="product" className="links">
                       Product
                     </Link>
                   </Button>
-                  <Button>
+                  <Button
+                    variant="primary"
+                    kind="flat"
+                    size="small"
+                    colorMode="light"
+                  >
                     <Link exact to="footer" className="links">
                       Contact
                     </Link>
                   </Button>
-                  <Button textDecoration = "none">
-                    <Link className="links" onClick={() => setShow(!show)} >
-                    
-                      <ShoppingCartIcon  style={{fill: "orange" , fontSize: 30}}/> 
+                  <Button
+                   
+                    variant="primary"
+                    kind="flat"
+                    size="small"
+                    colorMode="light"
+                  >
+                    <Link className="links" onClick={() => setShow(!show)}>
+                      <ShoppingCartIcon
+                        style={{ fill: "orange", fontSize: 30 }}
+                      />
                     </Link>
                   </Button>
                 </Tabs>
@@ -208,11 +260,9 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
           </Toolbar>
         </AppBar>
       </NavbarStyle>
-{/* ........................................................................................................... */}
+      {/* ........................................................................................................... */}
       <section id="home">{<Hero />}</section>
-       <section id="product">
-        {<Slider />}
-      </section> 
+      <section id="product">{<Slider />}</section>
       <section id="footer">{<Footer />}</section>
     </>
   );
