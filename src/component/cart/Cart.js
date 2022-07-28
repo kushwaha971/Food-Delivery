@@ -6,8 +6,9 @@ import {
   AppBar,
   Toolbar,
   Link,
+  Button 
 } from "@mui/material";
-import { Button } from "@cred/neopop-web/lib/components";
+
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import EmptyCart from "./EmptyCart";
 import CartPrice from "./CartPrice";

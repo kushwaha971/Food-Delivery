@@ -76,9 +76,9 @@ const Btn = styled(Box)(({ theme }) => ({
   marginTop: "45px",
   ".btn": {
     padding: "18px 0px",
-    width: "176px",
+    width: "140px",
     borderRadius: "10px",
-    gap: "10px",
+    gap: "6px",
     margin: theme.spacing(1),
     marginTop: theme.spacing(1),
     [theme.breakpoints.down("md")]: {
@@ -88,10 +88,10 @@ const Btn = styled(Box)(({ theme }) => ({
   },
   ".btn1": {
     padding: "15px 0px",
-    width: "176px",
+    width: "140px",
     borderRadius: "10px",
-    margin: theme.spacing(2),
-    marginTop: theme.spacing(2),
+    margin: theme.spacing(1),
+    marginTop: theme.spacing(1),
     [theme.breakpoints.down("md")]: {
       color: "#FFFFFF",
       margin: theme.spacing(0),
