@@ -12,8 +12,9 @@ import {
   useTheme,
   IconButton,
   Dialog,
+  Button
 } from "@mui/material";
-import { Button } from "@cred/neopop-web/lib/components";
+
 import { Link } from "react-scroll";
 import React, { useState } from "react";
 import logo from "./../images/BellaLogo.png";
@@ -46,7 +47,7 @@ const NavbarStyle = styled(Box)(({ theme }) => ({
     letterSpacing: "0px",
     fontStyle: "normal",
     textDecoration: "none",
-    
+
     [theme.breakpoints.between("md", "lg")]: {
       marginLeft: theme.spacing(5),
     },
@@ -124,19 +125,18 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       </Toolbar>
                     </AppBar>
                     <ListItemButton
-                     disableElevation
-            disableRipple
-            sx={{
-              ml: 1,
-              "&.MuiButtonBase-root:hover": {
-                bgcolor: "transparent"
-              }
-            }}
+                      disableElevation
+                      disableRipple
+                      sx={{
+                        ml: 1,
+                        "&.MuiButtonBase-root:hover": {
+                          bgcolor: "transparent",
+                        },
+                      }}
                       style={{
                         direction: "flex",
                         flexDirection: "column",
                         marginTop: "100px",
-                        
                       }}
                     >
                       <Button
@@ -171,11 +171,11 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     </Link>
                   </Button> */}
                       <Button
-                         variant="primary"
+                        variant="primary"
                         kind="flat"
                         size="big"
                         colorMode="light"
-                        >
+                      >
                         <Link
                           exact
                           to="footer"
@@ -210,6 +210,12 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                 <Tabs
                   dislabled
                   sx={{ marginLeft: "auto", marginRight: "80px" }}
+                  TabIndicatorProps={{
+                    style: {
+                      display: "none",
+                    },
+                  }}
+                  value={0}
                 >
                   <Button
                     variant="primary"
@@ -242,7 +248,6 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     </Link>
                   </Button>
                   <Button
-                   
                     variant="primary"
                     kind="flat"
                     size="small"

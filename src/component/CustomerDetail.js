@@ -5,12 +5,9 @@ import {
   DialogContent,
   DialogTitle,
   styled,
+  TextField,
 } from "@mui/material";
-import {
-  Button,
-  InputField,
-  HorizontalDivider,
-} from "@cred/neopop-web/lib/components";
+import { Button, HorizontalDivider } from "@cred/neopop-web/lib/components";
 import { useState } from "react";
 
 const DetailStyle = styled(Box)(({ theme }) => ({
@@ -21,41 +18,40 @@ const DetailStyle = styled(Box)(({ theme }) => ({
       padding: "15px",
     },
   },
+  ".textField":{
+    fontFamily: "Montserrat",
+    fontSize: "22px",
+    fontWeight: 600,
+    color: "#FA4A0C",
+  }
 }));
 
 function CustomerDetail({ customerdetail, setCustomerdetail }) {
-
-  const [detail,setDetail] = useState({
-    name: " ",
-    mobile: " ",
-    adhar: " ",
-    pan: " ",
-    address: " ",
+  const [detail, setDetail] = useState({
+    name: "",
+    mobile: "",
+    adhar: "",
+    pan: "",
+    address: "",
   });
+ 
+  const handleInput = (event) => {
+    setDetail((prevState) =>(
+      {...prevState,
+      [event.target.name]: event.target.value
+     }))
+  };
 
-    const [records,setRecords] = useState([]);
-  const handleInput = (e) =>{
-    const name = e.target.name;
-    const value = e.target.value;
-    setDetail({ ...detail, [name] : value});
-  }
-
-  const handleSubmit = (e) =>{
-      e.preventDefault();
-      const newRecord = {...detail, id: new Date().getTime().toString }
-      setRecords([...records, newRecord])
-      console.log(records)
-       setDetail({name: "",mobile:"",adhar: "",pan:"",address:""})
-
-  }
-
-
-
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(detail);
+    alert("submitted successfuly")
+  };
 
   return (
     <DetailStyle>
       <div className="detail-container">
+     
         <DialogTitle
           sx={{
             fontFamily: "Montserrat",
@@ -67,138 +63,66 @@ function CustomerDetail({ customerdetail, setCustomerdetail }) {
           Customer Detail
         </DialogTitle>
         <HorizontalDivider color="#8A8A8A" />
+        <form 
+          onSubmit={handleSubmit}
+          >
         <DialogContent>
-        <form action="" >
-          <div style={{ margin: "5px" }}>
-            <InputField
-              autoFocus
-              colorConfig={{
-                labelColor: "#0d0d0d",
-                textColor: "#000000",
+         
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "80%" },
               }}
-              style={{
-                fontFamily: "Roboto",
-                fontWeight: 500,
-                fontSize: "18px",
-              }}
-              type="text"
-              label="Name"
-              placeholder="Enter your name"
-              value={detail.name}
-               onChange={handleInput}
-              id="name"
-              name="name"
-            />
-            <HorizontalDivider
-              color="#8A8A8A"
-              style={{ marginBottom: "20px" }}
-            />
-          </div>
-
-          <div style={{ margin: "5px" }}>
-            <InputField
-              autoFocus
-              colorConfig={{
-                labelColor: "#0d0d0d",
-                textColor: "#000000",
-              }}
-              style={{
-                fontFamily: "Roboto",
-                fontWeight: 500,
-                fontSize: "18px",
-              }}
-              type="text"
-              label="Mobile Number"
-              placeholder="Enter mobile name"
-              value={detail.mobile}
-              onChange={handleInput}
-              id="number"
-              name="mobile"
-            />
-            <HorizontalDivider
-              color="#8A8A8A"
-              style={{ marginBottom: "20px" }}
-            />
-          </div>
-
-          <div style={{ margin: "5px" }}>
-            <InputField
-              autoFocus
-              colorConfig={{
-                labelColor: "#0d0d0d",
-                textColor: "#000000",
-              }}
-              style={{
-                fontFamily: "Roboto",
-                fontWeight: 500,
-                fontSize: "18px",
-              }}
-              type="text"
-              label="Adhar Number"
-              placeholder="Enter adhar number"
-               value={detail.adhar}
-              onChange={handleInput}
-              id="adhar"
-              name="adhar"
-            />
-            <HorizontalDivider
-              color="#8A8A8A"
-              style={{ marginBottom: "20px" }}
-            />
-          </div>
-
-          <div style={{ margin: "5px" }}>
-            <InputField
-              autoFocus
-              colorConfig={{
-                labelColor: "#0d0d0d",
-                textColor: "#252B42",
-              }}
-              style={{
-                fontFamily: "Roboto",
-                fontWeight: 500,
-                fontSize: "20px",
-              }}
-              type="text"
-              label="PAN Card Number"
-              placeholder="Enter PAN Card number"
-              value={detail.pan}
-              onChange={handleInput}
-              id="pancard"
-              name="pan"
-            />
-            <HorizontalDivider
-              color="#8A8A8A"
-              style={{ marginBottom: "20px" }}
-            />
-          </div>
-
-          <div style={{ margin: "5px" }}>
-            <InputField
-              autoFocus
-              colorConfig={{
-                labelColor: "#0d0d0d",
-                textColor: "#000000",
-              }}
-              style={{
-                fontFamily: "Roboto",
-                fontWeight: 500,
-                fontSize: "18px",
-              }}
-              type="text"
-              label=" Address"
-              placeholder="Enter Your Address"
-              value={detail.address}
-              onChange={handleInput}
-              id="address"
-              name="address"
-            />
-            <HorizontalDivider
-              color="#8A8A8A"
-              style={{ marginBottom: "20px" }}
-            />
-          </div>
-          </form>
+              noValidate
+            >
+              <TextField
+              required
+             
+                value={detail.name}
+                onChange={handleInput}
+                id="name"
+                label="Name"
+                name="name"
+                variant="standard"
+              />
+              <TextField
+                required
+                value={detail.mobile}
+                onChange={handleInput}
+                id="mobile"
+                name="mobile"
+                label="Mobile Number"
+                variant="standard"
+              />
+              <TextField
+                 required
+                id="adhar"
+                value={detail.adhar}
+                onChange={handleInput}
+                label="Adhar"
+                name="adhar"
+                variant="standard"
+              />
+              <TextField
+                required             
+                value={detail.pan}
+                onChange={handleInput}
+                name="pan"
+                id="pan"
+                label="PanCard Number"
+                variant="standard"
+              />
+              <TextField
+                 required               
+                value={detail.address}
+                onChange={handleInput}
+                name="address"
+                id="address"
+                label="Address"
+                variant="standard"
+              />
+            </Box>
+         
         </DialogContent>
         <DialogActions>
           <Button
@@ -208,7 +132,9 @@ function CustomerDetail({ customerdetail, setCustomerdetail }) {
               fontSize: "20px",
             }}
             colorConfig={{ backgroundColor: "#FA4A0C" }}
-             onClick={handleSubmit}
+            onClick={() => {
+              setCustomerdetail(!customerdetail);
+            }}
             type="submit"
           >
             Submit
@@ -227,7 +153,9 @@ function CustomerDetail({ customerdetail, setCustomerdetail }) {
             Cancel
           </Button>
         </DialogActions>
+        </form>
       </div>
+      
     </DetailStyle>
   );
 }
