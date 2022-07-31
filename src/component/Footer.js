@@ -9,14 +9,14 @@ import {
   useTheme,
   Button,
   Toolbar,
-  Dialog,
+
 } from "@mui/material";
 import logo from "./images/BellaLogo.png";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { useState } from "react";
-import CustomerDetail from "./CustomerDetail";
+// import { useState } from "react";
+// import CustomerDetail from "./CustomerDetail";
 
 
 const FooterStyle = styled(Box)(({ theme }) => ({
@@ -125,7 +125,7 @@ const Ftr = styled(Box)(({ theme }) => ({
 }));
 
 function Footer() {
-  const [customerdetail,setCustomerdetail] = useState(true);
+  // const [customerdetail,setCustomerdetail] = useState(true);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -166,7 +166,7 @@ function Footer() {
                 >
                   Order Soon
                 </Button>
-                 <Button
+                 {/* <Button
                  onClick={() => setCustomerdetail(!customerdetail)}
                   color="inherit"
                   variant="outlined"
@@ -180,7 +180,7 @@ function Footer() {
                   }}
                 >
                   Form
-                </Button> 
+                </Button>  */}
               </Typography>
             ) : (
               <Typography align="center">
@@ -197,7 +197,7 @@ function Footer() {
                 >
                   Order Soon
                 </Button>
-                <Button
+                {/* <Button
                 onClick={() => setCustomerdetail(!customerdetail)}
                   color="inherit"
                   variant="outlined"
@@ -211,7 +211,7 @@ function Footer() {
                   }}
                 >
                   form
-                </Button>
+                </Button> */}
               </Typography>
             )}
           </Btn>
@@ -272,12 +272,12 @@ function Footer() {
         ) : ( 
           ""
         )}
-        <Dialog
+        {/* <Dialog
         open = {!customerdetail}
         onClose = {() => {setCustomerdetail(!customerdetail)}}
         >
         <CustomerDetail customerdetail ={customerdetail} setCustomerdetail={setCustomerdetail}/>
-        </Dialog>
+        </Dialog> */}
       </Ftr>
       
     </div>
