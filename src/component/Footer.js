@@ -224,14 +224,14 @@ function Footer() {
             ""
           ) : (
             <Typography variant="title">
-              <img src={logo} width={240} height={102} alt="" />
+              <img src={logo} width={240} height={80} alt="" />
             </Typography>
           )}
 
           <Typography
            sx={{ margin: "auto" }}
            >
-            <YouTubeIcon className="symbol" />
+            <YouTubeIcon className="symbol"/>
             <FacebookIcon className="symbol" />
             <InstagramIcon className="symbol" />
           </Typography>
