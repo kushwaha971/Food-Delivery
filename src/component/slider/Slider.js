@@ -1,10 +1,11 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Card, CardMedia, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, {  useState } from "react";
 import Dot from "./Dot";
 import sliderItem from "./SliderItem";
 
 import Arrow from "./Arrow";
 import { useEffect } from "react";
+
 const SliderStyle = styled(Box)(({ theme }) => ({
   // marginTop: '250px',
   display: "flex",
@@ -59,6 +60,15 @@ const SliderStyle = styled(Box)(({ theme }) => ({
       marginLeft: '40px',
     }
   },
+  ".imageComponent": {
+    maxWidth: 300,
+    marginLeft: "65px",
+    borderRadius: '8px',
+    [theme.breakpoints.down('md')]:{
+      maxWidth: 280,
+    marginLeft: "45px",
+    }
+  },
 
   
 }));
@@ -67,7 +77,8 @@ const len = sliderItem.length - 1;
 const length = sliderItem.length;
 
 function Slider() {
-
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const [activeIndex, setActiveIndex] = useState(0);
 
 useEffect(()=>{
@@ -107,13 +118,16 @@ useEffect(()=>{
             >
                
 
-           
-              <img
-                 align="center" 
-                className="Img"
-                src={item.imageSrc} alt = ""
-                style={{ height: "250px", width: "280px"}}
-              />
+            <Card 
+            className="imageComponent"
+            >
+            <CardMedia
+            component="img"
+            image={item.imageSrc}
+            height = "250px"            
+            />
+             
+              </Card>
               <Typography className="benefits" align="center">
                 {item.itemName}
               </Typography> 
