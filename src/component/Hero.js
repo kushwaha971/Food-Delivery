@@ -1,18 +1,18 @@
 import React from "react";
 import image from "./images/Hero.svg";
 import mobile from "./images/mobile.svg";
-import MyLocationIcon from '@mui/icons-material/MyLocation';
+import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { Paper, Box, styled, Typography, Button, Tooltip } from "@mui/material";
 
-const btnStyle = 
-  {
-    color: "#FFFFFF",
-    fontSize: "16px",
-    fontFamily: "Montserrat0",
-    fontWeight: "700",
-    textTransform: "capitalize",
-    cursor:"pointer"
-  }
+const btnStyle = {
+  color: "#FFFFFF",
+  fontSize: "16px",
+  fontFamily: "Montserrat0",
+  fontWeight: "700",
+  textTransform: "capitalize",
+  cursor: "pointer",
+
+};
 
 const HeroStyle = styled(Box)(({ theme }) => ({
   ".paperContainer": {
@@ -24,7 +24,7 @@ const HeroStyle = styled(Box)(({ theme }) => ({
       backgroundImage: "none",
       align: "center",
     },
-  }, 
+  },
 }));
 
 const TextStyle = styled(Box)(({ theme }) => ({
@@ -78,10 +78,10 @@ const TextStyle = styled(Box)(({ theme }) => ({
       color: "#737373",
       lineHeight: "35px",
       paddingTop: "35px",
-      // marginTop: theme.spacing(5)
+     
     },
   },
-})); 
+}));
 
 const Btn = styled(Box)(({ theme }) => ({
   ".btn": {
@@ -92,14 +92,13 @@ const Btn = styled(Box)(({ theme }) => ({
     // width: '0px',
     // marginTop: '75px',
     background: "#FA4A0C",
-    cursor: 'pointer',
+    cursor: "pointer",
     [theme.breakpoints.down("md")]: {
       // margin: '5px',
       // marginTop: theme.spacing(5)
-     
     },
   },
- 
+
   ".btn1": {
     padding: "10px 90px",
     width: "36px",
@@ -125,14 +124,10 @@ const Mobile = styled(Box)(({ theme }) => ({
 
     [theme.breakpoints.down("md")]: {
       top: "380px",
-      width: "350px"
+      width: "350px",
     },
   },
 }));
-
-
-
-
 
 function Hero() {
   return (
@@ -140,10 +135,9 @@ function Hero() {
       <Paper
         className="paperContainer"
         elevation={0}
-        sx={{ marginTop: "90px", marginBottom:'265px' }}
+        sx={{ marginTop: "90px", marginBottom: "265px" }}
       >
         <TextStyle>
-
           {/* <Typography variant="h3" align="center" className="food">
             Pluto
           </Typography> */}
@@ -159,30 +153,24 @@ function Hero() {
 
         <Btn>
           <Typography align="center">
-            <Button
-              variant="contained"
-              className="btn"
-              sx={btnStyle}
-            >
+            <Button variant="contained" className="btn" sx={btnStyle}>
               Order Soon
             </Button>
 
             <Tooltip title="My Location">
-            <Button
-            style={{ backgroundColor: "#0026ca"}}
-            href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
-            target="_blank"
-              variant="contained"
-              className="btn"
-              sx={btnStyle}
-            >
-              <MyLocationIcon/> location
-            </Button>
+              <Button
+                style={{ backgroundColor: "#0026ca" }}
+                href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
+                target="_blank"
+                variant="contained"
+                className="btn"
+                sx={btnStyle}
+              >
+                <MyLocationIcon /> location
+              </Button>
             </Tooltip>
-           
-          </Typography> 
+          </Typography>
         </Btn>
-       
       </Paper>
       <Mobile>
         <Typography>
