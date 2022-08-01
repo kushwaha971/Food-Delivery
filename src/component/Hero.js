@@ -1,8 +1,8 @@
 import React from "react";
 import image from "./images/Hero.svg";
 import mobile from "./images/mobile.svg";
-
-import { Paper, Box, styled, Typography, Button } from "@mui/material";
+import MyLocationIcon from '@mui/icons-material/MyLocation';
+import { Paper, Box, styled, Typography, Button, Tooltip } from "@mui/material";
 
 const btnStyle = 
   {
@@ -11,6 +11,7 @@ const btnStyle =
     fontFamily: "Montserrat0",
     fontWeight: "700",
     textTransform: "capitalize",
+    cursor:"pointer"
   }
 
 const HeroStyle = styled(Box)(({ theme }) => ({
@@ -77,6 +78,7 @@ const TextStyle = styled(Box)(({ theme }) => ({
       color: "#737373",
       lineHeight: "35px",
       paddingTop: "35px",
+      // marginTop: theme.spacing(5)
     },
   },
 })); 
@@ -86,13 +88,18 @@ const Btn = styled(Box)(({ theme }) => ({
     paddingLeft: "20px",
     paddingRight: "20px",
     borderRadius: "30px",
-    margin: theme.spacing(2),
-    marginTop: theme.spacing(12),
+    // margin: '10px',
+    // width: '0px',
+    // marginTop: '75px',
     background: "#FA4A0C",
+    cursor: 'pointer',
     [theme.breakpoints.down("md")]: {
-      marginTop: theme.spacing(5),
+      // margin: '5px',
+      // marginTop: theme.spacing(5)
+     
     },
   },
+ 
   ".btn1": {
     padding: "10px 90px",
     width: "36px",
@@ -159,16 +166,23 @@ function Hero() {
             >
               Order Soon
             </Button>
-            {/* <Button
-              color="inherit"
-              variant="outlined"
-              className="btn1"
+
+            <Tooltip title="My Location">
+            <Button
+            style={{ backgroundColor: "#0026ca"}}
+            href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
+            target="_blank"
+              variant="contained"
+              className="btn"
               sx={btnStyle}
             >
-              Order Now
-        </Button>*/}
+              <MyLocationIcon/> location
+            </Button>
+            </Tooltip>
+           
           </Typography> 
         </Btn>
+       
       </Paper>
       <Mobile>
         <Typography>
