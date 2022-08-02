@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Card, CardMedia, styled, Typography, } from "@mui/material";
 import React, {  useState } from "react";
 import Dot from "./Dot";
 import sliderItem from "./SliderItem";
@@ -77,8 +77,7 @@ const len = sliderItem.length - 1;
 const length = sliderItem.length;
 
 function Slider() {
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+
   const [activeIndex, setActiveIndex] = useState(0);
 
 useEffect(()=>{
