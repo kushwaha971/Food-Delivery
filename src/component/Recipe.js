@@ -14,20 +14,36 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const NavbarStyle = styled(Box)(({ theme }) => ({
   ".links": {
-    marginLeft: theme.spacing(10),
+    marginLeft: theme.spacing(25),
     [theme.breakpoints.between("md", "lg")]: {
       marginLeft: theme.spacing(5),
     },
   },
 }));
 
+  const Heading = styled(Box)(({theme})=>({
+    marginTop: theme.spacing(25),
+    marginLeft: theme.spacing(35),
+    [theme.breakpoints.down("md")]:{
+      marginTop: theme.spacing(18),
+      marginLeft: theme.spacing(5),
+    },
+    ".plutoRecipe":{
+    fontFamily: "Poppins",
+    fontSize: "30px",
+    fontWeight: "600",
+    color: '#424242',
+    }
+
+
+  }))
 const AccordionStyle = styled(Box)(({ theme }) => ({
   ".paperStyle": {
-    margin: theme.spacing(13),
-   marginTop: theme.spacing(20),
+    margin: theme.spacing(40),
+   marginTop: theme.spacing(5),
    [theme.breakpoints.down("md")]:{
     margin: theme.spacing(3),
-    marginTop: theme.spacing(20),
+    marginTop: theme.spacing(4),
    },
   },
   ".recipeHeading":{
@@ -42,6 +58,9 @@ const AccordionStyle = styled(Box)(({ theme }) => ({
     fontSize: "13px",
     fontWeight: "600",
     color: "#424242",
+    "&:hover": {
+      background: "#9e9e9e",
+    },
    }
 }));
 
@@ -49,7 +68,7 @@ function Recipe() {
   return (
     <>
       <NavbarStyle>
-        <AppBar color="inherit" elevation={0} sx={{ padding: "30px" }}>
+        <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
           <Toolbar>
             <Typography variant="title">
               <img src={logo} width={182} height={64} alt="" />
@@ -58,9 +77,15 @@ function Recipe() {
         </AppBar>
       </NavbarStyle>
 
+      <Heading>
+        <Typography variant="h5" className="plutoRecipe"><span style={{ color: "#FA4A0C",}}>Pluto</span> Recipe</Typography>
+      </Heading>
+
       <AccordionStyle>
         <div className="paperStyle">
-          <Accordion sx={{margin: '15px',borderColor:'#FA4A0C'}}>
+          <Accordion
+           sx={{margin: '15px',borderColor:'#FA4A0C'}}
+           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -70,11 +95,12 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Classic Veg Burger</li>
-                <li className="receipeList">Classic Paneer Burger</li>
-                <li className="receipeList">Loaded Cheese Burger</li>
-                <li className="receipeList">Double Patty Veg Burger</li>
-                <li className="receipeList">Pluto Special Burger</li>
+              
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Classic Veg Burger</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Paneer Burger</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Loaded Cheese Burger</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Double Patty Veg Burger</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Pluto Special Burger</a></li>
                
               </ul>
             </AccordionDetails>
@@ -90,10 +116,10 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Classic French Fries</li>
-                <li className="receipeList">Peri-Peri French Fries</li>
-                <li className="receipeList"> Cheese French Fries</li>
-                <li className="receipeList">Masala French Fries</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic French Fries</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Peri-Peri French Fries</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Cheese French Fries</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Masala French Fries</a></li>
             
                
               </ul>
@@ -110,12 +136,12 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Classic Veg Sandwich</li>
-                <li className="receipeList">Creamy Malai Sandwich</li>
-                <li className="receipeList">Masala Sandwich</li>
-                <li className="receipeList">Classic Veg with loaded Chessse Sandwich</li>
-                <li className="receipeList">Butter with Banana Sandwich</li>
-                <li className="receipeList">Pluto Special Sandwich</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Veg Sandwich</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Creamy Malai Sandwich</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Masala Sandwich</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Veg with loaded Chessse Sandwich</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Butter with Banana Sandwich</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Pluto Special Sandwich</a></li>
                
               </ul>
             </AccordionDetails>
@@ -131,12 +157,12 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Classic Veg Maggie</li>
-                <li className="receipeList">Veg Maggie with Cheese blast</li>
-                <li className="receipeList">Spicy Masala Maggie</li>
-                <li className="receipeList">Plain Butter Maggie </li>
-                <li className="receipeList">Hot Schezwan Maggie</li>
-                <li className="receipeList">Soupy Maggie</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Veg Maggie</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Veg Maggie with Cheese blast</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Spicy Masala Maggie</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Plain Butter Maggie</a> </li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Hot Schezwan Maggie</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Soupy Maggie</a></li>
                
               </ul>
             </AccordionDetails>
@@ -152,10 +178,10 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Masala Twister</li>
-                <li className="receipeList">Peri-Peri Cheese Twister</li>
-                <li className="receipeList">Hot Schezwan Twister</li>
-                <li className="receipeList">Pluto Potato Twister</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Masala Twister</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Peri-Peri Cheese Twister</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Hot Schezwan Twister</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Pluto Potato Twister</a></li>
                
               </ul>
             </AccordionDetails>
@@ -171,11 +197,11 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Pluto Iced Coffee</li>
-                <li className="receipeList">Frappuccino</li>
-                <li className="receipeList">Iced Mocha </li>
-                <li className="receipeList">Classic Cold Coffee</li>
-                <li className="receipeList">Pluto Freek shake Coffee</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Pluto Iced Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Frappuccino</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Iced Mocha </a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Cold Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Pluto Freek shake Coffee</a></li>
                
               </ul>
             </AccordionDetails>
@@ -191,9 +217,9 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Hot Coffee</li>
-                <li className="receipeList">Filter Coffee</li>
-                <li className="receipeList">Masala Ginger Tea</li>              
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Hot Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Filter Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Masala Ginger Tea</a></li>              
               </ul>
             </AccordionDetails>
           </Accordion>
@@ -208,65 +234,21 @@ function Recipe() {
             </AccordionSummary>
             <AccordionDetails>
               <ul>
-                <li className="receipeList">Classic Veg Burger + French Fries + Classic Cold Coffee</li>
-                <li className="receipeList">Classic Veg Burger + French Fries + Coke </li>
-                <li className="receipeList"> Maggie + Cold Coffee</li>
-                <li className="receipeList"> Maggie + Coke + French Fries</li>
-                <li className="receipeList"> Potato Twister + Cold Coffee + Maggie</li>
-                <li className="receipeList"> Potato Twister + Coke + Maggie</li>
-                <li className="receipeList"> Grilled Veg Sandwich + French Fries + Coke</li>
-                <li className="receipeList">Grilled Veg Sandwich + French Fries + Cold Coffee</li>
-                <li className="receipeList">Grilled Veg Sandwich + Tea/Coffee</li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Veg Burger + French Fries + Classic Cold Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Classic Veg Burger + French Fries + Coke </a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Maggie + Cold Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Maggie + Coke + French Fries</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Potato Twister + Cold Coffee + Maggie</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Potato Twister + Coke + Maggie</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} > Grilled Veg Sandwich + French Fries + Coke</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Grilled Veg Sandwich + French Fries + Cold Coffee</a></li>
+                <li className="receipeList"><a href="#" style={{textDecoration: 'none',color: "#424242",}} >Grilled Veg Sandwich + Tea/Coffee</a></li>
                
               </ul>
             </AccordionDetails>
           </Accordion>
 
-          <Accordion sx={{margin: '15px',borderColor:'#FA4A0C'}}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography variant="h6" className="recipeHeading">Classic Veg Burger:22(35)</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ul>
-                <li className="receipeList">Bun: 8</li>
-                <li className="receipeList">Veggies: 5</li>
-                <li className="receipeList">Tikkie: 7</li>
-                <li className="receipeList">Sauces: 2</li>              
-              </ul>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion sx={{margin: '15px',borderColor:'#FA4A0C'}}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography variant="h6" className="recipeHeading">Cold Coffee: 17(30)</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ul>
-                <li className="receipeList">Milk: 6</li>
-                <li className="receipeList">Coffee + Ice+ Suger: 3</li>
-                <li className="receipeList">Ice-Cream + cream: 8</li>               
-              </ul>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion sx={{margin: '15px',borderColor:'#FA4A0C'}}>
-            <AccordionSummary>
-              <Typography variant="subtitle" className="recipeHeading">French Fries: 12(25)</Typography>
-            </AccordionSummary>
-          </Accordion>
-          <Accordion sx={{margin: '15px',borderColor:'#FA4A0C'}}>
-            <AccordionSummary>
-              <Typography variant="h6" className="recipeHeading">Maggie with veggie: 14 + 5 + 5 (24)</Typography>
-            </AccordionSummary>
-          </Accordion>
+        
           
         </div>
         
