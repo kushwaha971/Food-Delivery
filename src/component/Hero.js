@@ -2,7 +2,7 @@ import React from "react";
 import image from "./images/Hero.svg";
 import mobile from "./images/mobile.svg";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
-import { Paper, Box, styled, Typography, Button, Tooltip } from "@mui/material";
+import { Paper, Box, styled, Typography, Button } from "@mui/material";
 
 const btnStyle = {
   color: "#FFFFFF",
@@ -14,9 +14,8 @@ const btnStyle = {
   paddingLeft: "20px",
   paddingRight: "20px",
   borderRadius: "30px",
+ background: "#FA4A0C",
 
-  background: "#FA4A0C",
-  cursor: "pointer",
 };
 
 const HeroStyle = styled(Box)(({ theme }) => ({
@@ -87,38 +86,15 @@ const TextStyle = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Btn = styled(Box)(({ theme }) => ({
-  ".btn": {
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    borderRadius: "30px",
 
-    background: "#FA4A0C",
-    cursor: "pointer",
-    [theme.breakpoints.down("md")]: {
-      // margin: '5px',
-      // marginTop: theme.spacing(5)
-    },
-  },
 
-  ".btn1": {
-    padding: "10px 90px",
-    width: "36px",
-    borderRadius: "30px",
-    margin: theme.spacing(2),
-    marginTop: theme.spacing(12),
-    color: "#FA4A0C",
-    [theme.breakpoints.down("md")]: {
-      marginTop: theme.spacing(1),
-    },
-  },
-}));
+ 
 
 const Mobile = styled(Box)(({ theme }) => ({
   ".mob1": {
     position: "absolute",
     margin: "auto",
-    top: "330px",
+    top: "250px",
     left: "0",
     right: "0",
     textAlign: "center",
@@ -156,9 +132,8 @@ function Hero() {
         <Box
           style={{
             display: "flex",
-            justifyContent: "space-around",
-            textAlign: "center",
-            flexDirection: "row",
+            gap: 10,
+            justifyContent: "center",
             margin: 20,
           }}
         >
