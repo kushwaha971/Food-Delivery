@@ -13,8 +13,8 @@ import * as Yup from "yup";
 import TextField from "./TextField";
 
 const EmployeeStyle = styled(Box)(({ theme }) => ({
-  padding: "20px",
-  margin: "5px",
+  padding: "10px",
+  margin: "10px",
 }));
 
 function Empoloyee({ employeeDetail, setEmployeeDetail }) {
@@ -76,13 +76,13 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
             <DialogTitle
               sx={{
                 fontFamily: "Montserrat",
-                fontSize: "20px",
+                fontSize: "15px",
                 fontWeight: 700,
                 color: "#5C5C5C",
               }}
             >
               <span
-                style={{ fontSize: "25px", fontWeight: 700, color: "#FA4A0C" }}
+                style={{ fontSize: "20px", fontWeight: 700, color: "#FA4A0C" }}
               >
                 Pluto
               </span>
@@ -93,13 +93,13 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
                 <Box
                   component="form"
                   sx={{
-                    "& > :not(style)": { m: 2, width: "100%" },
+                    "& > :not(style)": { m:2,ml:-0.5, width: "100%" },
                   }}
                   noValidate
                 >
                   <TextField label="Name" name="name" type="text" />
                   <TextField label="Mobile Number" name="mobile" type="text" />
-                  <TextField label="Adhar Number" name="adhar" type="text" />
+                  <TextField label="Aadhar Number" name="adhar" type="text" />
                   <TextField label="PAN Number" name="pan" type="text" />
                   <TextField label="Address" name="address" type="text" />
                 </Box>

@@ -6,13 +6,32 @@ function TextField({ label, ...props }) {
 
   return (
     <div>
-      <label
+     
+      {field.name === "address" ? (<>
+        <label
         htmlFor={field.name}
-        style={{ marginLeft: "1px", fontFamily: "Montserrat" }}
+        style={{ fontFamily: "Montserrat" }}
       >
         {label}:
-      </label>
-      <input
+      </label><textarea
+        style={{ height: "60px", width: "100%" }}
+        className={`form-control shadow-none ${
+          meta.touched && meta.error && "is-invalid"
+        }`}
+        {...field}
+        {...props}
+        autoComplete="off"
+        rows={5}
+
+cols={5}
+      /></> 
+      ):(
+       <> <label
+        htmlFor={field.name}
+        style={{ fontFamily: "Montserrat" }}
+      >
+        {label}:
+      </label> <input
         style={{ height: "25px", width: "100%" }}
         className={`form-control shadow-none ${
           meta.touched && meta.error && "is-invalid"
@@ -20,7 +39,8 @@ function TextField({ label, ...props }) {
         {...field}
         {...props}
         autoComplete="off"
-      />
+      /></>)}
+   
 
       <ErrorMessage
         component="div"
