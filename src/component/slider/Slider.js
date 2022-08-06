@@ -63,6 +63,7 @@ const SliderStyle = styled(Box)(({ theme }) => ({
   ".imageComponent": {
     maxWidth: 300,
     marginLeft: "65px",
+    marginBottom: "5px",
     borderRadius: '8px',
     [theme.breakpoints.down('md')]:{
       maxWidth: 280,
@@ -127,21 +128,21 @@ useEffect(()=>{
             />
              
               </Card>
-              <Typography className="benefits" align="center">
+              {/* <Typography className="benefits" align="center">
                 {item.itemName}
-              </Typography> 
+              </Typography>  */}
              
-              <Typography className="description" align="center">
+              {/* <Typography className="description" align="center">
                 {item.desc}
-              </Typography>
-              <Typography className="offer" align="center">
+              </Typography> */}
+              {/* <Typography className="offer" align="center">
                 {item.offer}
-              </Typography>
+              </Typography> */}
             </div>
           );
         })}
 
-        <Dot
+        <Dot 
           activeIndex={activeIndex}
           sliderItem={sliderItem}
           onClick={(activeIndex) => setActiveIndex(activeIndex)}

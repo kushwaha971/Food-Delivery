@@ -5,7 +5,7 @@ import { Box, styled } from "@mui/material";
 
 const ArrowStyle = styled(Box)(({theme})=>({
     ".arrow":{
-        marginTop:'-330px',
+        marginTop:'-160px',
         marginBottom:'330px',
         
         
