@@ -9,23 +9,25 @@ import {
   useTheme,
   Button,
   Toolbar,
+  Dialog,
 
 } from "@mui/material";
 import logo from "./images/BellaLogo.png";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-// import { useState } from "react";
+import { useState } from "react";
 // import CustomerDetail from "./CustomerDetail";
+import Empoloyee from "./employeeDetail/Empoloyee";
 
-
+ 
 const FooterStyle = styled(Box)(({ theme }) => ({
   ".paperContainer": {
     backgroundImage: `url(${image})`,
     height: "480px",
     backgroundRepeat: "no-repeat",
     backgroundSize: " 100vw",
-    marginTop: "80px",
+    marginTop: "50px",
     [theme.breakpoints.down("md")]: {
       backgroundImage: "none",
       align: "center",
@@ -35,6 +37,15 @@ const FooterStyle = styled(Box)(({ theme }) => ({
   },
 }));
 
+const CareerStyle = styled(Box)(({theme})=>({
+  
+  marginLeft: '20px',
+  [theme.breakpoints.down("md")]:{
+    marginTop: '25px',
+  }
+ 
+}))
+
 const TextStyle = styled(Box)(({ theme }) => ({
   ".slogan": {
     paddingTop: "100px",
@@ -42,7 +53,7 @@ const TextStyle = styled(Box)(({ theme }) => ({
     fontFamily: "Montserrat",
     fontSize: "40px",
     fontWeight: "700",
-    lineHeight: "170px",
+    lineHeight: "120px",
     letterSpacing: "0.2px",
 
     [theme.breakpoints.down("md")]: {
@@ -59,7 +70,7 @@ const TextStyle = styled(Box)(({ theme }) => ({
     color: "#F7F7F7",
     fontFamily: "Montserrat",
     fontWeight: "500",
-    lineHeight: "0px",
+    // lineHeight: "0px",
     fontSize: "30px",
     letterSpacing: "0.1px",
 
@@ -73,12 +84,11 @@ const TextStyle = styled(Box)(({ theme }) => ({
 }));
 
 const Btn = styled(Box)(({ theme }) => ({
-  marginTop: "45px",
+  marginTop: "20px",
   ".btn": {
-    padding: "18px 0px",
-    width: "140px",
-    borderRadius: "10px",
-    gap: "6px",
+    padding: "5px",
+    width: "120px",
+    borderRadius: "15px",
     margin: theme.spacing(1),
     marginTop: theme.spacing(1),
     [theme.breakpoints.down("md")]: {
@@ -94,38 +104,45 @@ const Btn = styled(Box)(({ theme }) => ({
     marginTop: theme.spacing(1),
     [theme.breakpoints.down("md")]: {
       color: "#FFFFFF",
-      margin: theme.spacing(0),
-       
+      margin: theme.spacing(0),   
       
     },
   },
 }));
 
 const Ftr = styled(Box)(({ theme }) => ({
+ [theme.breakpoints.down("md")]:{
+ 
+  backgroundImage: "none",
+  align: "center",
+  background: "#252B42",
+ },
   ".content": {
     marginLeft: "20px",
     marginRight: "25px",
   },
 
-  logoo: {
+  logoo: { 
     width: "220",
     height: "102",
   },
 
   ".symbol": {
+    
     marginLeft: "20px",
     width: "45px",
     height: "40px",
     color: "#FA4A0C",
     [theme.breakpoints.down("md")]: {
       marginLeft: "25px",
+      marginTop: '90px',
       
     },
   },
 }));
 
 function Footer() {
-  // const [customerdetail,setCustomerdetail] = useState(true);
+  const [employeeDetail,setEmployeeDetail] = useState(true);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -190,7 +207,7 @@ function Footer() {
                   sx={{
                     textTransform: "capitalize",
                     background: "#FA4A0C",
-                    fontSize: "16px",
+                    fontSize: "14px",
                     fontFamily: "Montserrat",
                     fontWeight: "700",
                   }}
@@ -215,6 +232,26 @@ function Footer() {
               </Typography>
             )}
           </Btn>
+          <CareerStyle>
+            <Typography variant="h6" className="career"  sx={{
+                 marginLeft: "20px",
+                color: "#5C5C5C",
+                fontFamily: "Roboto",
+                fontSize: "20px",
+                fontWeight: "700",
+              }}>Career</Typography>
+            <Button 
+            onClick={() => setEmployeeDetail(!employeeDetail)}
+                  color="inherit"
+                  sx={{
+                    textTransform: "capitalize",
+                    color: "#FFFFFF",
+                    fontSize: "10px",
+                    fontFamily: "Montserrat",
+                    fontWeight: "700",
+                  }}
+                  >Employee Registration</Button>
+          </CareerStyle>
         </Paper>
       </FooterStyle>
 
@@ -233,7 +270,8 @@ function Footer() {
            >
             <YouTubeIcon className="symbol"/>
             <FacebookIcon className="symbol" />
-            <InstagramIcon className="symbol" />
+            <a href="https://www.instagram.com/pluto_india_food/tagged/">   <InstagramIcon className="symbol"/></a>
+         
           </Typography>
           {isMatch ? (
             ""
@@ -262,9 +300,10 @@ function Footer() {
               fontFamily: "Roboto",
               fontSize: "12px",
               fontWeight: "700",
-              lineSpacing: '0.1px',
+              lineSpacing: '1px',
               lineHeight: '18px',
-              marginBottom: '35px',
+              paddingBottom: '10px',
+              // marginBottom: '0px',
             }}
           >
             Copywright 2022 Pluto India Foods
@@ -272,12 +311,12 @@ function Footer() {
         ) : ( 
           ""
         )}
-        {/* <Dialog
-        open = {!customerdetail}
-        onClose = {() => {setCustomerdetail(!customerdetail)}}
+        <Dialog
+        open = {!employeeDetail}
+        onClose = {() => {setEmployeeDetail(!employeeDetail)}}
         >
-        <CustomerDetail customerdetail ={customerdetail} setCustomerdetail={setCustomerdetail}/>
-        </Dialog> */}
+        <Empoloyee employeeDetail ={employeeDetail} setEmployeeDetail={setEmployeeDetail}/>
+        </Dialog>
       </Ftr>
       
     </div>
