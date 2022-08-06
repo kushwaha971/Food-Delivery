@@ -1,5 +1,5 @@
-import { Box, Card, CardMedia, styled, Typography, } from "@mui/material";
-import React, {  useState } from "react";
+import { Box, Card, CardMedia, styled, Typography } from "@mui/material";
+import React, { useState } from "react";
 import Dot from "./Dot";
 import sliderItem from "./SliderItem";
 
@@ -15,11 +15,11 @@ const SliderStyle = styled(Box)(({ theme }) => ({
   marginTop: "300px",
   position: "relative",
 
-  ".containerSlider":{
-      width: '450px',
-      [theme.breakpoints.down('md')]:{
-        width:'400px',
-      }
+  ".containerSlider": {
+    width: "450px",
+    [theme.breakpoints.down("md")]: {
+      width: "400px",
+    },
   },
   ".benefits": {
     fontFamily: "Montserrat",
@@ -31,72 +31,67 @@ const SliderStyle = styled(Box)(({ theme }) => ({
   },
 
   ".Img": {
-    margin: '25px',
-    marginLeft:'80px',
-    [theme.breakpoints.down('md')]:{
-      marginLeft: '40px',
+    margin: "25px",
+    marginLeft: "80px",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "40px",
     },
- 
   },
   ".description": {
     fontFamily: "Montserrat",
     fontSize: "14px",
     fontWeight: "400",
-    marginTop: '15px',
-    [theme.breakpoints.down('md')]:{
-      width: '300px',
-      marginLeft: '30px',
-      
-    }
+    marginTop: "15px",
+    [theme.breakpoints.down("md")]: {
+      width: "300px",
+      marginLeft: "30px",
+    },
   },
 
   ".offer": {
     fontFamily: "Montserrat",
-    marginTop: '20px',
+    marginTop: "20px",
     fontSize: "16px",
     fontWeight: "500",
-    [theme.breakpoints.down('md')]:{
-      width: '300px',
-      marginLeft: '40px',
-    }
+    [theme.breakpoints.down("md")]: {
+      width: "300px",
+      marginLeft: "40px",
+    },
   },
   ".imageComponent": {
     maxWidth: 300,
     marginLeft: "65px",
     marginBottom: "5px",
-    borderRadius: '8px',
-    [theme.breakpoints.down('md')]:{
+    borderRadius: "8px",
+    [theme.breakpoints.down("md")]: {
       maxWidth: 280,
-    marginLeft: "45px",
-    }
+      marginLeft: "45px",
+    },
   },
-
-  
 }));
 
 const len = sliderItem.length - 1;
 const length = sliderItem.length;
 
 function Slider() {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
-useEffect(()=>{
-  let slider = setInterval(()=>{
-    setActiveIndex((activeIndex+1)%length)
-  },2000)
-  return () =>{
-    clearInterval(slider);
-  }
-},[activeIndex])
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setActiveIndex((activeIndex + 1) % length);
+    }, 2000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [activeIndex]);
 
-  const prevSlide= () =>{
-    setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-  }
+  const prevSlide = () => {
+    setActiveIndex(activeIndex < 1 ? len : activeIndex - 1);
+  };
 
-  const nextSlide = () =>{
-    setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-  }
+  const nextSlide = () => {
+    setActiveIndex(activeIndex === len ? 0 : activeIndex + 1);
+  };
 
   return (
     <SliderStyle>
@@ -116,22 +111,17 @@ useEffect(()=>{
               key={indx}
               className={indx === activeIndex ? "slides active" : "inactive"}
             >
-               
-
-            <Card 
-            className="imageComponent"
-            >
-            <CardMedia
-            component="img"
-            image={item.imageSrc}
-            height = "250px"            
-            />
-             
+              <Card className="imageComponent">
+                <CardMedia
+                  component="img"
+                  image={item.imageSrc}
+                  height="250px"
+                />
               </Card>
               {/* <Typography className="benefits" align="center">
                 {item.itemName}
               </Typography>  */}
-             
+
               {/* <Typography className="description" align="center">
                 {item.desc}
               </Typography> */}
@@ -142,7 +132,7 @@ useEffect(()=>{
           );
         })}
 
-        <Dot 
+        <Dot
           activeIndex={activeIndex}
           sliderItem={sliderItem}
           onClick={(activeIndex) => setActiveIndex(activeIndex)}

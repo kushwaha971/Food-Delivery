@@ -11,7 +11,7 @@ const EmptyCart = () => {
         height: "65vh",
         background: "#fff",
         margin: "80px 140px",
-        marginTop: "100px"
+        marginTop: "100px",
       }}
     >
       <Box style={{ textAlign: "center", paddingTop: 70 }}>

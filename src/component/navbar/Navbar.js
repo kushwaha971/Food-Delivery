@@ -12,7 +12,7 @@ import {
   useTheme,
   IconButton,
   Dialog,
-  Button
+  Button,
 } from "@mui/material";
 
 import { Link } from "react-scroll";

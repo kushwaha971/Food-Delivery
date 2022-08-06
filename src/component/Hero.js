@@ -11,13 +11,18 @@ const btnStyle = {
   fontWeight: "700",
   textTransform: "capitalize",
   cursor: "pointer",
+  paddingLeft: "20px",
+  paddingRight: "20px",
+  borderRadius: "30px",
 
+  background: "#FA4A0C",
+  cursor: "pointer",
 };
 
 const HeroStyle = styled(Box)(({ theme }) => ({
   ".paperContainer": {
     backgroundImage: `url(${image})`,
-    height: "619px",
+    height: "500px",
     backgroundRepeat: "no-repeat",
     backgroundSize: " 100vw",
     [theme.breakpoints.down("md")]: {
@@ -78,7 +83,6 @@ const TextStyle = styled(Box)(({ theme }) => ({
       color: "#737373",
       lineHeight: "35px",
       paddingTop: "35px",
-     
     },
   },
 }));
@@ -88,9 +92,7 @@ const Btn = styled(Box)(({ theme }) => ({
     paddingLeft: "20px",
     paddingRight: "20px",
     borderRadius: "30px",
-    // margin: '10px',
-    // width: '0px',
-    // marginTop: '75px',
+
     background: "#FA4A0C",
     cursor: "pointer",
     [theme.breakpoints.down("md")]: {
@@ -116,14 +118,14 @@ const Mobile = styled(Box)(({ theme }) => ({
   ".mob1": {
     position: "absolute",
     margin: "auto",
-    top: "350px",
+    top: "330px",
     left: "0",
     right: "0",
     textAlign: "center",
     zIndex: "1",
 
     [theme.breakpoints.down("md")]: {
-      top: "380px",
+      top: "330px",
       width: "350px",
     },
   },
@@ -151,26 +153,30 @@ function Hero() {
           </Typography>
         </TextStyle>
 
-        <Btn>
-          <Typography align="center">
-            <Button variant="contained" className="btn" sx={btnStyle}>
-              Order Soon
-            </Button>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            textAlign: "center",
+            flexDirection: "row",
+            margin: 20,
+          }}
+        >
+          <Button variant="contained" className="btn" sx={btnStyle}>
+            Order Soon
+          </Button>
 
-            <Tooltip title="My Location">
-              <Button
-                style={{ backgroundColor: "#0026ca" }}
-                href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
-                target="_blank"
-                variant="contained"
-                className="btn"
-                sx={btnStyle}
-              >
-                <MyLocationIcon /> location
-              </Button>
-            </Tooltip>
-          </Typography>
-        </Btn>
+          <Button
+            style={{ backgroundColor: "#0026ca" }}
+            href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
+            target="_blank"
+            variant="contained"
+            className="btn"
+            sx={btnStyle}
+          >
+            <MyLocationIcon /> location
+          </Button>
+        </Box>
       </Paper>
       <Mobile>
         <Typography>

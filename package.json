@@ -25,6 +25,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "pretty": "npx prettier --write .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

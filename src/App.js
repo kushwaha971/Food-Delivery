@@ -25,7 +25,7 @@ function App() {
               />
             }
           />
-          <Route path="/recipe" element={<Recipe/>}/>
+          <Route path="/recipe" element={<Recipe />} />
         </Routes>
       </BrowserRouter>
     </div>

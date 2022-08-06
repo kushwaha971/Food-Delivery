@@ -6,7 +6,7 @@ import {
   AppBar,
   Toolbar,
   Link,
-  Button 
+  Button,
 } from "@mui/material";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -110,21 +110,12 @@ function Cart({ Item, cart, setCart, show, setShow }) {
       <>
         <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
           <Toolbar>
-            <Button
-             variant="primary"
-                        kind="flat"
-                        size="big"
-                        colorMode="light">
+            <Button variant="primary" kind="flat" size="big" colorMode="light">
               <Link className="links" onClick={() => setShow(!show)}>
                 <ArrowBackIcon style={{ fill: "black", fontSize: "30px" }} />
               </Link>
             </Button>
-            <Button
-             variant="primary"
-                        kind="flat"
-                        size="big"
-                        colorMode="light"
-                        >
+            <Button variant="primary" kind="flat" size="big" colorMode="light">
               <Typography
                 sx={{
                   fontFamily: "Roboto",

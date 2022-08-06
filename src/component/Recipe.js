@@ -100,7 +100,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Classic Veg Burger
                   </a>
                 </li>
@@ -173,7 +172,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Cheese French Fries
                   </a>
                 </li>
@@ -228,7 +226,6 @@ function Recipe() {
                 <li className="receipeList">
                   <a
                     href="https://www.youtube.com/watch?v=owow9tu3L6A "
-                   
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
                     Classic Veg with loaded Chessse Sandwich
@@ -237,7 +234,6 @@ function Recipe() {
                 <li className="receipeList">
                   <a
                     href="https://www.youtube.com/watch?v=gN-njwlTlGM "
-                   
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
                     Butter with Banana Sandwich
@@ -246,7 +242,6 @@ function Recipe() {
                 <li className="receipeList">
                   <a
                     href="https://www.youtube.com/watch?v=KdLvelT0R1A"
-                   
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
                     Pluto Special Sandwich
@@ -447,7 +442,6 @@ function Recipe() {
                 <li className="receipeList">
                   <a
                     href="https://www.youtube.com/watch?v=_vgCSi5WQPQ"
-                   
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
                     Filter Coffee
@@ -498,7 +492,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Maggie + Cold Coffee
                   </a>
                 </li>
@@ -507,7 +500,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Maggie + Coke + French Fries
                   </a>
                 </li>
@@ -516,7 +508,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Potato Twister + Cold Coffee + Maggie
                   </a>
                 </li>
@@ -525,7 +516,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Potato Twister + Coke + Maggie
                   </a>
                 </li>
@@ -534,7 +524,6 @@ function Recipe() {
                     href="/#"
                     style={{ textDecoration: "none", color: "#424242" }}
                   >
-                  
                     Grilled Veg Sandwich + French Fries + Coke
                   </a>
                 </li>

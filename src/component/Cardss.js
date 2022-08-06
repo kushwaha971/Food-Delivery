@@ -91,19 +91,16 @@ function Cardss({ cart, setCart }) {
                       >
                         {probs.flag ? (
                           <>
-                          <Tooltip title = "Added in Cart">
-                            <CheckIcon style={{ fill: "orange" }} />
-                          </Tooltip>
-
+                            <Tooltip title="Added in Cart">
+                              <CheckIcon style={{ fill: "orange" }} />
+                            </Tooltip>
                           </>
-                          
                         ) : (
                           <>
-                           <Tooltip title = "Add to Card">
-                            <AddShoppingCartIcon style={{ fill: "green" }} />
-                          </Tooltip>
+                            <Tooltip title="Add to Card">
+                              <AddShoppingCartIcon style={{ fill: "green" }} />
+                            </Tooltip>
                           </>
-                         
                         )}
                       </IconButton>
                     }

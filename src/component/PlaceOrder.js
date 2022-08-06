@@ -61,7 +61,7 @@ const OrderStyle = styled(Box)(({ theme }) => ({
     margin: "5px",
   },
 }));
-function PlaceOrder({order,setOrder}) {
+function PlaceOrder({ order, setOrder }) {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -231,7 +231,7 @@ function PlaceOrder({order,setOrder}) {
               ) : (
                 <>
                   <Button
-                  onClick={() =>setOrder(!order)}
+                    onClick={() => setOrder(!order)}
                     className="placeOrder"
                     variant="contained"
                     sx={{
@@ -263,7 +263,7 @@ function PlaceOrder({order,setOrder}) {
                 Proceed to checkOut
               </Button>
               <Button
-                onClick={() =>setOrder(!order)}
+                onClick={() => setOrder(!order)}
                 className="placeOrder"
                 variant="contained"
                 sx={{
