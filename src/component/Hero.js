@@ -7,7 +7,7 @@ import { Paper, Box, styled, Typography, Button, Tooltip } from "@mui/material";
 const btnStyle = {
   color: "#FFFFFF",
   fontSize: "16px",
-  fontFamily: "Montserrat0",
+  fontFamily: "Montserrat",
   fontWeight: "700",
   textTransform: "capitalize",
   cursor: "pointer",
