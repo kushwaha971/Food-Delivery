@@ -84,6 +84,7 @@ const TextStyle = styled(Box)(({ theme }) => ({
       paddingTop: "35px",
     },
   },
+  
 }));
 
 
@@ -132,12 +133,14 @@ function Hero() {
         <Box
           style={{
             display: "flex",
-            gap: 10,
-            justifyContent: "center",
+            justifyContent: "space-around",
             margin: 20,
+           
           }}
         >
-          <Button variant="contained" className="btn" sx={btnStyle}>
+          <Button variant="contained"
+           sx={btnStyle}
+           >
             Order Soon
           </Button>
 
