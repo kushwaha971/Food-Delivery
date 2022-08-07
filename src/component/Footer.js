@@ -77,12 +77,38 @@ const FooterStyle = styled(Box)(({ theme }) => ({
       paddingTop: "40px",
     },
   },
-  ".regInfo":{
-    marginLeft: '50px',
+  ".regInfo": {
+    marginLeft: "50px",
     marginTop: "30px",
     [theme.breakpoints.down("md")]: {
-      marginLeft: '0px',
+      marginLeft: "0px",
       marginTop: "0px",
+    },
+  },
+  ".career": {
+    marginTop: "10px",
+    marginLeft: "18px",
+    color: "#263238",
+    fontFamily: "Roboto",
+    fontSize: "20px",
+    fontWeight: "700",
+    [theme.breakpoints.down("md")]: {
+      color: "#bdbdbd",
+      fontSize: "15px",
+    },
+  },
+  ".employe":{
+    marginTop: "5px",
+    marginLeft: "18px",
+    textTransform: "capitalize",
+    color: "#263238",
+    fontSize: "15px",
+    fontFamily: "Montserrat",
+    fontWeight: "600",
+    cursor: "pointer",
+    [theme.breakpoints.down("md")]: {
+      color: "#90a4ae",
+      fontSize: "12px",
     },
   }
 }));
@@ -173,37 +199,15 @@ function Footer() {
             </Typography>
           )}
 
-                <div className="regInfo">
-          <Typography
-            variant="h6"
-            className="career"
-            sx={{
-              marginTop: "10px",
-              marginLeft: "18px",
-              color: "#5C5C5C",
-              fontFamily: "Roboto",
-              fontSize: "15px",
-              fontWeight: "700",
-            }}
-          >
-            Career
-          </Typography>
-          <Typography
-            onClick={() => setEmployeeDetail(!employeeDetail)}
-            color="inherit"
-            sx={{
-              marginTop: "5px",
-              marginLeft: "18px",
-              textTransform: "capitalize",
-              color: "#FFFFFF",
-              fontSize: "10px",
-              fontFamily: "Montserrat",
-              fontWeight: "700",
-              cursor: "pointer",
-            }}
-          >
-            Employee Registration
-          </Typography>
+          <div className="regInfo">
+            <Typography variant="h6" className="career">
+              Career
+            </Typography>
+            <Typography
+              onClick={() => setEmployeeDetail(!employeeDetail)}
+              className = "employe">
+              Employee Registration
+            </Typography>
           </div>
         </Paper>
       </FooterStyle>
