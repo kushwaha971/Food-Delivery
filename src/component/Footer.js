@@ -96,7 +96,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
       fontSize: "15px",
     },
   },
-  ".employe":{
+  ".employe": {
     marginTop: "5px",
     marginLeft: "18px",
     textTransform: "capitalize",
@@ -109,7 +109,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
       color: "#90a4ae",
       fontSize: "12px",
     },
-  }
+  },
 }));
 
 const Ftr = styled(Box)(({ theme }) => ({
@@ -204,7 +204,8 @@ function Footer() {
             </Typography>
             <Typography
               onClick={() => setEmployeeDetail(!employeeDetail)}
-              className = "employe">
+              className="employe"
+            >
               Employee Registration
             </Typography>
           </div>
