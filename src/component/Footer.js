@@ -25,12 +25,11 @@ const FooterStyle = styled(Box)(({ theme }) => ({
     height: "480px",
     backgroundRepeat: "no-repeat",
     backgroundSize: " 100vw",
-    marginTop: "-150px",
+    marginTop: "-170px",
     [theme.breakpoints.down("md")]: {
       backgroundImage: "none",
       align: "center",
       background: "#252B42",
-      marginTop: "-120px",
     },
   },
   ".btn": {

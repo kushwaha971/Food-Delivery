@@ -7,13 +7,17 @@ import Arrow from "./Arrow";
 import { useEffect } from "react";
 
 const SliderStyle = styled(Box)(({ theme }) => ({
-  // marginTop: '150px',
+ 
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   margin: " auto",
-  marginTop: "300px",
+  marginTop: "-100px",
   position: "relative",
+  [theme.breakpoints.down("md")]: {
+    marginTop: "-100px",
+    
+  },
 
   ".containerSlider": {
     width: "450px",

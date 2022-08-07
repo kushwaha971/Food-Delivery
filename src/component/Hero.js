@@ -91,19 +91,25 @@ const TextStyle = styled(Box)(({ theme }) => ({
 
  
 
+
 const Mobile = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
   ".mob1": {
-    position: "absolute",
-    margin: "auto",
-    top: "250px",
-    left: "0",
-    right: "0",
-    textAlign: "center",
+  
+    marginTop: "-650px",
+    // top: "-250px",
+    // left: "0",
+    // right: "0",
+    // textAlign: "center",
     zIndex: "1",
 
     [theme.breakpoints.down("md")]: {
-      top: "330px",
+      marginTop: '-540px',
       width: "350px",
+      zIndex: '0'
     },
   },
 }));
@@ -133,7 +139,9 @@ function Hero() {
         <Box
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            direction:"column",
+            justifyContent: "center",
+            gap: 20,
             margin: 20,
            
           }}
