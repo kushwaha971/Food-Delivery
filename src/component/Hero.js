@@ -14,8 +14,7 @@ const btnStyle = {
   paddingLeft: "20px",
   paddingRight: "20px",
   borderRadius: "30px",
- background: "#FA4A0C",
-
+  background: "#FA4A0C",
 };
 
 const HeroStyle = styled(Box)(({ theme }) => ({
@@ -84,26 +83,20 @@ const TextStyle = styled(Box)(({ theme }) => ({
       paddingTop: "35px",
     },
   },
-  
 }));
 
-
-
- 
-
 const Mobile = styled(Box)(({ theme }) => ({
-  ".mob1": {
-    position: "absolute",
-    margin: "auto",
-    top: "250px",
-    left: "0",
-    right: "0",
-    textAlign: "center",
-    zIndex: "1",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 
+  ".mob1": {
+    marginTop: "-650px",
+    zIndex: "1",
     [theme.breakpoints.down("md")]: {
-      top: "330px",
+      marginTop: "-540px",
       width: "350px",
+      zIndex: "0",
     },
   },
 }));
@@ -133,14 +126,13 @@ function Hero() {
         <Box
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            direction: "column",
+            justifyContent: "center",
+            gap: 20,
             margin: 20,
-           
           }}
         >
-          <Button variant="contained"
-           sx={btnStyle}
-           >
+          <Button variant="contained" sx={btnStyle}>
             Order Soon
           </Button>
 

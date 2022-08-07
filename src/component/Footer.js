@@ -25,12 +25,11 @@ const FooterStyle = styled(Box)(({ theme }) => ({
     height: "480px",
     backgroundRepeat: "no-repeat",
     backgroundSize: " 100vw",
-    marginTop: "-150px",
+    marginTop: "-170px",
     [theme.breakpoints.down("md")]: {
       backgroundImage: "none",
       align: "center",
       background: "#252B42",
-      marginTop: "-120px",
     },
   },
   ".btn": {
@@ -97,7 +96,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
       fontSize: "15px",
     },
   },
-  ".employe":{
+  ".employe": {
     marginTop: "5px",
     marginLeft: "18px",
     textTransform: "capitalize",
@@ -110,7 +109,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
       color: "#90a4ae",
       fontSize: "12px",
     },
-  }
+  },
 }));
 
 const Ftr = styled(Box)(({ theme }) => ({
@@ -205,7 +204,8 @@ function Footer() {
             </Typography>
             <Typography
               onClick={() => setEmployeeDetail(!employeeDetail)}
-              className = "employe">
+              className="employe"
+            >
               Employee Registration
             </Typography>
           </div>
