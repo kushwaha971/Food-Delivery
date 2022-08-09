@@ -55,7 +55,7 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
             process.env.NODE_ENV === "development" ||
             window.location.href?.includes("staging")
               ? `https://script.google.com/macros/s/AKfycbwoiTuHtPPM50moZFsFU_UIBUDh7Q5xFxVNW3dP0P2SCCrC90mmxmJyWCGcAWsbaHq3/exec?Name=${name}&Mobile=${mobile}&Aadhar=${adhar}&PAN=${pan}&Address=${address}&Date=${date}`
-              : `https://script.google.com/macros/s/AKfycbw01j6TmHQH9UvLouuzpLv-l2J-yESH9-QENpN1leVQ-HPnACmy-h5T7E6n4QL84GqnRA/exec?Date=${date}&UTM=${utm_info}&Action=${payload?.action}&Timestamp=${timeStamp}`;
+              : `https://script.google.com/macros/s/AKfycbwoiTuHtPPM50moZFsFU_UIBUDh7Q5xFxVNW3dP0P2SCCrC90mmxmJyWCGcAWsbaHq3/exec?Name=${name}&Mobile=${mobile}&Aadhar=${adhar}&PAN=${pan}&Address=${address}&Date=${date}`;
 
           await axios
             .post(WEBAPP_URL)
