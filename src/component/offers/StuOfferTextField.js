@@ -12,7 +12,7 @@ function StuOfferTextField(props) {
           fontFamily: "Montserrat",
           fontStyle: "captlize",
           textTransform: "capitalize",
-          marginBottom: "5px",
+          marginBottom: "3px",
           fontSize: "15px",
           borderRadius: "50%",
         }}

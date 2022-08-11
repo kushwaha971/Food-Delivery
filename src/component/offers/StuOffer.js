@@ -1,16 +1,19 @@
 import React from "react";
 import {
+    AppBar,
   Button,
   DialogActions,
   DialogContent,
   DialogTitle,
   styled,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormControal from "./FormControal";
+import logo from "./../images/BellaLogo.png"
 
 const OffereStyle = styled(Box)(({ theme }) => ({
   padding: "10px",
@@ -64,6 +67,18 @@ function StuOffer() {
 
   return (
     <OffereStyle>
+     <AppBar
+                      color="inherit"
+                      elevation={0}
+                      sx={{ padding: "10px" }}
+                    >
+                      <Toolbar>
+                        <Typography variant="title">
+                          <img src={logo} width={182} height={64} alt="" />
+                        </Typography>
+                        {/* <ClearIcon sx={{ marginLeft: "auto" }} /> */}
+                      </Toolbar>
+                    </AppBar>
       <Formik
         initialValues={{
           name: "",
@@ -86,6 +101,7 @@ function StuOffer() {
               <Typography
                 variant="h3"
                 sx={{
+                    marginTop:'80px',
                     fontFamily: "Montserrat",
                   fontSize: "40px",
                   fontWeight: 700,
@@ -110,7 +126,7 @@ function StuOffer() {
                 <Box
                   component="form"
                   sx={{
-                    "& > :not(style)": { m: 3, ml: -0.5, width: "100%" },
+                    "& > :not(style)": { m: 2, ml: -0.5, width: "100%" },
                   }}
                   noValidate
                 >

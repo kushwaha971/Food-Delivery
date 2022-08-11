@@ -13,7 +13,7 @@ function SelectItem(props) {
           fontSize: "15px",
           fontStyle: "captlize",
           textTransform: "capitalize",
-          marginBottom: "5px",
+       
         }}
       >
         {label}
@@ -24,7 +24,7 @@ function SelectItem(props) {
         id={name}
         name={name}
         {...rest}
-        style={{ width: "100%" }}
+        style={{ width: "100%",height:'30px' }}
       >
         {options.map((option) => {
           return (
