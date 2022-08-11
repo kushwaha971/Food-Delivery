@@ -54,7 +54,7 @@ function Cardss({ cart, setCart }) {
       return item;
     });
 
-    setCart(info);
+    setCart(info); 
   };
 
   return (

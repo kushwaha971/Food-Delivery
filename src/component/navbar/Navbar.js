@@ -147,6 +147,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       >
                         <Link
                           exact
+                          spy={true} smooth={true}
                           to="home"
                           onClick={() => setOpenDrawer(!openDrawer)}
                           style={drwerStyle}
@@ -178,6 +179,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       >
                         <Link
                           exact
+                          spy={true} smooth={true}
                           to="footer"
                           onClick={() => setOpenDrawer(!openDrawer)}
                           style={drwerStyle}
@@ -223,7 +225,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     size="small"
                     colorMode="light"
                   >
-                    <Link exact to="home" className="links">
+                    <Link exact to="home" spy={true} smooth={true} className="links">
                       Home
                     </Link>
                   </Button>
@@ -233,7 +235,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     size="small"
                     colorMode="light"
                   >
-                    <Link exact to="product" className="links">
+                    <Link exact to="product" spy={true} smooth={true} className="links">
                       Product
                     </Link>
                   </Button>
@@ -243,7 +245,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     size="small"
                     colorMode="light"
                   >
-                    <Link exact to="footer" className="links">
+                    <Link exact to="footer" spy={true} smooth={true} className="links">
                       Contact
                     </Link>
                   </Button>
@@ -253,7 +255,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     size="small"
                     colorMode="light"
                   >
-                    <Link className="links" onClick={() => setShow(!show)}>
+                    <Link className="links" spy={true} smooth={true} onClick={() => setShow(!show)}>
                       <ShoppingCartIcon
                         style={{ fill: "orange", fontSize: 30 }}
                       />
