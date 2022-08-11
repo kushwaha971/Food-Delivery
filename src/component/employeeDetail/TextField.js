@@ -22,8 +22,7 @@ function TextField({ label, ...props }) {
         {...props}
         autoComplete="off"
         rows={5}
-
-cols={5}
+        cols={5}
       /></> 
       ):(
        <> <label
@@ -49,7 +48,7 @@ cols={5}
           position: "absolute",
           color: "red",
           fontSize: ".6rem",
-        }}
+        }} 
       />
     </div>
   );

@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 import TextField from "./TextField";
@@ -46,6 +46,7 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
           console.log(mobile);
           console.log(adhar);
           console.log(address);
+        
 
           let timeStamp = new Date();
           let date = timeStamp?.getDate();
@@ -93,7 +94,7 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
                 <Box
                   component="form"
                   sx={{
-                    "& > :not(style)": { m:2,ml:-0.5, width: "100%" },
+                    "& > :not(style)": { m: 2, ml: -0.5, width: "100%" },
                   }}
                   noValidate
                 >
@@ -102,6 +103,7 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
                   <TextField label="Aadhar Number" name="adhar" type="text" />
                   <TextField label="PAN Number" name="pan" type="text" />
                   <TextField label="Address" name="address" type="text" />
+
                 </Box>
               </DialogContent>
               <DialogActions>
