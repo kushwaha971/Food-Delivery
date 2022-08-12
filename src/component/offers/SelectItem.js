@@ -24,7 +24,7 @@ function SelectItem(props) {
         id={name}
         name={name}
         {...rest}
-        style={{ width: "102%",height:'22px' }}
+        style={{ width: "102%",height:'27px' }}
       >
         {options.map((option) => {
           return (
