@@ -19,7 +19,7 @@ function SelectItem(props) {
         {label}
       </label>
       <br />
-      <Field
+      <Field 
         as="select"
         id={name}
         name={name}
