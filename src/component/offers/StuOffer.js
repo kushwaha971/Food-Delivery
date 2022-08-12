@@ -147,10 +147,10 @@ function StuOffer() {
               <Typography
                 sx={{
                   fontFamily: "Robboto",
-                  fontSize: "16px",
+                  fontSize: "18px",
                   fontWeight: 700,
                   color: "#5C5C5C",
-                  marginTop: "15px",
+                  marginTop: "8px",
                   marginBottom: "-20px",
                 }}
               >

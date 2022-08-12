@@ -3,16 +3,17 @@ import image from "./images/Hero.svg";
 import mobile from "./images/mobile.svg";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { Paper, Box, styled, Typography, Button } from "@mui/material";
+import {Link} from 'react-router-dom'
 
 const btnStyle = {
   color: "#FFFFFF",
-  fontSize: "16px",
+  fontSize: "14px",
   fontFamily: "Montserrat",
   fontWeight: "700",
   textTransform: "capitalize",
   cursor: "pointer",
-  paddingLeft: "20px",
-  paddingRight: "20px",
+  paddingLeft: "15px",
+  paddingRight: "15px",
   borderRadius: "30px",
   background: "#FA4A0C",
 };
@@ -102,6 +103,7 @@ const Mobile = styled(Box)(({ theme }) => ({
 }));
 
 function Hero() {
+
   return (
     <HeroStyle>
       <Paper
@@ -133,7 +135,7 @@ function Hero() {
           }}
         >
           <Button variant="contained" sx={btnStyle}>
-            Order Soon
+           <Link to = "/offer" style={{textDecoration: 'none',color: '#ffff'}}> Students Offers</Link> 
           </Button>
 
           <Button
