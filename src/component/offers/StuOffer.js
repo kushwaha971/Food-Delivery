@@ -18,7 +18,7 @@ import axios from "axios";
 
 const OffereStyle = styled(Box)(({ theme }) => ({
   margin: '10px',
-  padding: '10px',
+  padding: '5px',
   ".StuOffer":{
     direction: 'flex',
     flexDirection:'center',
@@ -135,9 +135,9 @@ function StuOffer() {
               <Typography
                 variant="h3"
                 sx={{
-                  marginTop: "80px",
+                  marginTop: "60px",
                   fontFamily: "Montserrat",
-                  fontSize: "40px",
+                  fontSize: "35px",
                   fontWeight: 700,
                   color: "#FA4A0C",
                 }}
@@ -150,8 +150,8 @@ function StuOffer() {
                   fontSize: "20px",
                   fontWeight: 700,
                   color: "#5C5C5C",
-                  marginTop: "25px",
-                  marginBottom: "-10px",
+                  marginTop: "22px",
+                  marginBottom: "-20px",
                 }}
               >
               
@@ -194,7 +194,7 @@ function StuOffer() {
                   />
                 </Box>
               </DialogContent>
-              <DialogActions style={{ marginTop: "15px" }}>
+              <DialogActions style={{ marginTop: "7px" }}>
                 <Button
                   type="submit"
                   variant="contained"

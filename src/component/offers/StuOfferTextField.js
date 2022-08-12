@@ -12,9 +12,8 @@ function StuOfferTextField(props) {
           fontFamily: "Montserrat",
           fontStyle: "captlize",
           textTransform: "capitalize",
-          marginBottom: "3px",
           fontSize: "15px",
-          borderRadius: "50%",
+        
         }}
       >
         {label}
@@ -24,7 +23,7 @@ function StuOfferTextField(props) {
         id={name}
         name={name}
         {...rest}
-        style={{ width: "100%", height: "25px" ,marginBottom:"15px"}}
+        style={{ width: "100%", height: "20px" }}
       />
       <ErrorMessage component={TextError} name={name} />
     </div>
