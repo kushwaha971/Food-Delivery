@@ -19,12 +19,12 @@ function SelectItem(props) {
         {label}
       </label>
       <br />
-      <Field
+      <Field 
         as="select"
         id={name}
         name={name}
         {...rest}
-        style={{ width: "100%",height:'30px' }}
+        style={{ width: "102%",height:'22px' }}
       >
         {options.map((option) => {
           return (
