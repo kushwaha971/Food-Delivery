@@ -18,6 +18,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { useState } from "react";
 // import CustomerDetail from "./CustomerDetail";
 import Empoloyee from "./employeeDetail/Empoloyee";
+import { Link } from "react-router-dom";
 
 const FooterStyle = styled(Box)(({ theme }) => ({
   ".paperContainer": {
@@ -172,12 +173,17 @@ function Footer() {
                 sx={{
                   textTransform: "capitalize",
                   background: "#FA4A0C",
-                  fontSize: "16px",
+                  fontSize: "12px",
                   fontFamily: "Montserrat",
                   fontWeight: "700",
                 }}
               >
-                Order Soon
+                <Link
+                  to="/offer"
+                  style={{ textDecoration: "none", color: "#ffff" }}
+                >
+                  Students Offers
+                </Link>
               </Button>
             </div>
           ) : (
@@ -188,12 +194,17 @@ function Footer() {
                 sx={{
                   textTransform: "capitalize",
                   background: "#FA4A0C",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   fontFamily: "Montserrat",
-                  fontWeight: "700",
+                  fontWeight: "700", 
                 }}
               >
-                Order Soon
+                <Link
+                  to="/offer"
+                  style={{ textDecoration: "none", color: "#ffff" }}
+                >
+                  Students Offers
+                </Link>
               </Button>
             </Typography>
           )}
