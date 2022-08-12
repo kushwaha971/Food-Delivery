@@ -118,7 +118,7 @@ function StuOffer() {
             .post(WEBAPP_URL)
             .then((res) => {
               setTimeout(() => {
-                alert(JSON.stringify("Your Order Placed Successfully"));
+                alert(JSON.stringify("Registration completed successfully"));
               }, 100);
               console.log(payload);
               resetForm({ payload: "" });
@@ -137,7 +137,7 @@ function StuOffer() {
                 sx={{
                   marginTop: "60px",
                   fontFamily: "Montserrat",
-                  fontSize: "35px",
+                  fontSize: "30px",
                   fontWeight: 700,
                   color: "#FA4A0C",
                 }}
@@ -147,15 +147,15 @@ function StuOffer() {
               <Typography
                 sx={{
                   fontFamily: "Robboto",
-                  fontSize: "20px",
+                  fontSize: "16px",
                   fontWeight: 700,
                   color: "#5C5C5C",
-                  marginTop: "22px",
+                  marginTop: "15px",
                   marginBottom: "-20px",
                 }}
               >
               
-                for College/School Students only-
+                 College/School Students only-
               </Typography>
             </DialogTitle>
             <Form>
@@ -194,7 +194,7 @@ function StuOffer() {
                   />
                 </Box>
               </DialogContent>
-              <DialogActions style={{ marginTop: "7px" }}>
+              <DialogActions>
                 <Button
                   type="submit"
                   variant="contained"
@@ -205,7 +205,7 @@ function StuOffer() {
                     backgroundColor: "#4CAF50",
                   }}
                 >
-                  Place Order
+                  Register Now
                 </Button>
                 <Button
                   variant="contained"

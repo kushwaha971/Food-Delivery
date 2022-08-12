@@ -23,7 +23,7 @@ function StuOfferTextField(props) {
         id={name}
         name={name}
         {...rest}
-        style={{ width: "100%", height: "20px" }}
+        style={{ width: "100%", height: "25px" }}
       />
       <ErrorMessage component={TextError} name={name} />
     </div>
