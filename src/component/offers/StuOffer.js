@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    AppBar,
+  AppBar,
   Button,
   DialogActions,
   DialogContent,
@@ -13,11 +13,25 @@ import { Box } from "@mui/system";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormControal from "./FormControal";
-import logo from "./../images/BellaLogo.png"
+import logo from "./../images/BellaLogo.png";
+import axios from "axios";
 
 const OffereStyle = styled(Box)(({ theme }) => ({
-  padding: "10px",
-  margin: "10px",
+  margin: '10px',
+  padding: '10px',
+  ".StuOffer":{
+    direction: 'flex',
+    flexDirection:'center',
+    justifyContent: 'center',
+    alignItems:'center',
+    width: '25%',
+    marginLeft: '500px',
+    [theme.breakpoints.down("md")]:{
+      width: '100%',
+      marginLeft: '1px',
+    }
+  }
+  
 }));
 
 function StuOffer() {
@@ -67,18 +81,15 @@ function StuOffer() {
 
   return (
     <OffereStyle>
-     <AppBar
-                      color="inherit"
-                      elevation={0}
-                      sx={{ padding: "10px" }}
-                    >
-                      <Toolbar>
-                        <Typography variant="title">
-                          <img src={logo} width={182} height={64} alt="" />
-                        </Typography>
-                        {/* <ClearIcon sx={{ marginLeft: "auto" }} /> */}
-                      </Toolbar>
-                    </AppBar>
+    <Box className = "StuOffer">
+      <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
+        <Toolbar>
+          <Typography variant="title">
+            <img src={logo} width={182} height={64} alt="" />
+          </Typography>
+        
+        </Toolbar>
+      </AppBar>
       <Formik
         initialValues={{
           name: "",
@@ -86,12 +97,35 @@ function StuOffer() {
           college: "",
           combo: "",
         }}
-        onSubmit={(values, { resetForm }) => {
-          setTimeout(() => {
-            alert(JSON.stringify("Your Order Placed Successfully"));
-          }, 1000);
-          console.log(values);
-          resetForm({ values: "" });
+        
+       
+        onSubmit={async (payload, { resetForm }) => {
+          let name = payload.name;
+          let mobile = payload.mobile;
+          let college = payload.college;
+          let combo = payload.combo;
+          let timeStamp = new Date();
+          let date = timeStamp?.getDate();
+       
+
+          const WEBAPP_URL =
+            process.env.NODE_ENV === "development" ||
+            window.location.href?.includes("staging")
+              ? `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`
+              : `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`;
+
+          await axios
+            .post(WEBAPP_URL)
+            .then((res) => {
+              setTimeout(() => {
+                alert(JSON.stringify("Your Order Placed Successfully"));
+              }, 100);
+              console.log(payload);
+              resetForm({ payload: "" });
+            })
+            .catch((error) => {
+              console.log("error", error);
+            });
         }}
         validationSchema={validate}
       >
@@ -101,8 +135,8 @@ function StuOffer() {
               <Typography
                 variant="h3"
                 sx={{
-                    marginTop:'80px',
-                    fontFamily: "Montserrat",
+                  marginTop: "80px",
+                  fontFamily: "Montserrat",
                   fontSize: "40px",
                   fontWeight: 700,
                   color: "#FA4A0C",
@@ -110,16 +144,19 @@ function StuOffer() {
               >
                 Free Combo Offer
               </Typography>
-              <Typography sx={{
-                
-                fontFamily: "Robboto",
-                fontSize: "20px",
-                fontWeight: 700,
-                color: "#5C5C5C",
-                marginTop: '25px',
-                marginBottom: '-10px'
-              }}> for College/School Students only-</Typography>
-             
+              <Typography
+                sx={{
+                  fontFamily: "Robboto",
+                  fontSize: "20px",
+                  fontWeight: 700,
+                  color: "#5C5C5C",
+                  marginTop: "25px",
+                  marginBottom: "-10px",
+                }}
+              >
+              
+                for College/School Students only-
+              </Typography>
             </DialogTitle>
             <Form>
               <DialogContent>
@@ -157,7 +194,7 @@ function StuOffer() {
                   />
                 </Box>
               </DialogContent>
-              <DialogActions style={{ marginTop: "10px" }}>
+              <DialogActions style={{ marginTop: "15px" }}>
                 <Button
                   type="submit"
                   variant="contained"
@@ -188,6 +225,7 @@ function StuOffer() {
           </>
         )}
       </Formik>
+      </Box>
     </OffereStyle>
   );
 }

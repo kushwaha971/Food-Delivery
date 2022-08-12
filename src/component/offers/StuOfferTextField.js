@@ -17,14 +17,14 @@ function StuOfferTextField(props) {
           borderRadius: "50%",
         }}
       >
-        {name}
+        {label}
       </label>
       <br />
       <Field
         id={name}
         name={name}
         {...rest}
-        style={{ width: "100%", height: "25px" }}
+        style={{ width: "100%", height: "25px" ,marginBottom:"15px"}}
       />
       <ErrorMessage component={TextError} name={name} />
     </div>
