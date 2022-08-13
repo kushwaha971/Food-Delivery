@@ -162,7 +162,7 @@ function StuOffer() {
                       fontSize: "16px",
                       fontWeight: 700,
                       marginTop: '10px',
-                      marginBottom: "-25px",
+                      marginBottom: "-37px",
                       
                     }}
                   >
