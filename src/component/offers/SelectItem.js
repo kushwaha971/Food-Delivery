@@ -5,7 +5,7 @@ import TextError from "./TextError";
 function SelectItem(props) {
   const { label, name, options, ...rest } = props;
   return (
-    <div style={{ width: "100%" }}>
+    <div >
       <label
         htmlFor={name}
         style={{
@@ -14,6 +14,7 @@ function SelectItem(props) {
           fontStyle: "captlize",
           textTransform: "capitalize",
           marginLeft: "2px",
+          
         }}
       >
         {label}
