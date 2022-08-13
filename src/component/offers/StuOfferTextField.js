@@ -5,7 +5,7 @@ import TextError from "./TextError";
 function StuOfferTextField(props) {
   const { label, name, ...rest } = props;
   return (
-    <div>
+    <div >
       <label
         htmlFor={name}
         style={{

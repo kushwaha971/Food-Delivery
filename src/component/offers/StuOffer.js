@@ -17,21 +17,20 @@ import logo from "./../images/BellaLogo.png";
 import axios from "axios";
 
 const OffereStyle = styled(Box)(({ theme }) => ({
-  margin: '10px',
-  padding: '5px',
-  ".StuOffer":{
-    direction: 'flex',
-    flexDirection:'center',
-    justifyContent: 'center',
-    alignItems:'center',
-    width: '25%',
-    marginLeft: '500px',
-    [theme.breakpoints.down("md")]:{
-      width: '100%',
-      marginLeft: '1px',
-    }
-  }
-  
+  margin: "10px",
+  padding: "5px",
+  ".StuOffer": {
+    direction: "flex",
+    flexDirection: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "25%",
+    marginLeft: "500px",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+      marginLeft: "1px",
+    },
+  },
 }));
 
 function StuOffer() {
@@ -81,150 +80,175 @@ function StuOffer() {
 
   return (
     <OffereStyle>
-    <Box className = "StuOffer">
-      <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
-        <Toolbar>
-          <Typography variant="title">
-            <img src={logo} width={182} height={64} alt="" />
-          </Typography>
-        
-        </Toolbar>
-      </AppBar>
-      <Formik
-        initialValues={{
-          name: "",
-          mobile: "",
-          college: "",
-          combo: "",
-        }}
-        
-       
-        onSubmit={async (payload, { resetForm }) => {
-          let name = payload.name;
-          let mobile = payload.mobile;
-          let college = payload.college;
-          let combo = payload.combo;
-          let timeStamp = new Date();
-          let date = timeStamp?.getDate();
-       
+      <Box className="StuOffer">
+        <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
+          <Toolbar>
+            <Typography variant="title">
+              <img src={logo} width={182} height={64} alt="" />
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Formik
+          initialValues={{
+            name: "",
+            mobile: "",
+            college: "",
+            combo: "",
+          }}
+          onSubmit={async (payload, { resetForm }) => {
+            let name = payload.name;
+            let mobile = payload.mobile;
+            let college = payload.college;
+            let combo = payload.combo;
+            let timeStamp = new Date();
+            let date = timeStamp?.getDate();
 
-          const WEBAPP_URL =
-            process.env.NODE_ENV === "development" ||
-            window.location.href?.includes("staging")
-              ? `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`
-              : `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`;
+            const WEBAPP_URL =
+              process.env.NODE_ENV === "development" ||
+              window.location.href?.includes("staging")
+                ? `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`
+                : `https://script.google.com/macros/s/AKfycbwxSqJ-RZguFoEnG2WOsYct19f_eUWMnKlNKSoJnVQe1m7ziqA0IBOCV3UR_Mw-y7Ao/exec?Name=${name}&Institute=${college}&Mobile=${mobile}&Combo=${combo}&Time=${timeStamp}&Date=${date}`;
 
-          await axios
-            .post(WEBAPP_URL)
-            .then((res) => {
-              setTimeout(() => {
-                alert(JSON.stringify("Registration completed successfully"));
-              }, 100);
-              console.log(payload);
-              resetForm({ payload: "" });
-            })
-            .catch((error) => {
-              console.log("error", error);
-            });
-        }}
-        validationSchema={validate}
-      >
-        {(formik) => (
-          <>
-            <DialogTitle>
-              <Typography
-                variant="h3"
-                sx={{
-                  marginTop: "60px",
-                  fontFamily: "Montserrat",
-                  fontSize: "30px",
-                  fontWeight: 700,
-                  color: "#FA4A0C",
-                }}
-              >
-                Free Combo Offer
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Robboto",
-                  fontSize: "18px",
-                  fontWeight: 700,
-                  color: "#5C5C5C",
-                  marginTop: "8px",
-                  marginBottom: "-20px",
-                }}
-              >
-              
-                 College/School Students only-
-              </Typography>
-            </DialogTitle>
-            <Form>
-              <DialogContent>
-                <Box
-                  component="form"
+            await axios
+              .post(WEBAPP_URL)
+              .then((res) => {
+                setTimeout(() => {
+                  alert(JSON.stringify("Registration completed successfully"));
+                }, 100);
+                console.log(payload);
+                resetForm({ payload: "" });
+              })
+              .catch((error) => {
+                console.log("error", error);
+              });
+          }}
+          validationSchema={validate}
+        >
+          {(formik) => (
+            <>
+              <DialogTitle>
+                <Typography
+                  variant="h3"
                   sx={{
-                    "& > :not(style)": { m: 2, ml: -0.5, width: "100%" },
-                  }}
-                  noValidate
-                >
-                  <FormControal
-                    control="input"
-                    type="text"
-                    label="Name"
-                    name="name"
-                  />
-                  <FormControal
-                    control="input"
-                    type="text"
-                    label="Mobile Number"
-                    name="mobile"
-                  />
-                  <FormControal
-                    control="input"
-                    type="text"
-                    label="School/College Name"
-                    name="college"
-                  />
-
-                  <FormControal
-                    control="select"
-                    label="Select your combo"
-                    name="combo"
-                    options={combolist}
-                  />
-                </Box>
-              </DialogContent>
-              <DialogActions>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
+                    marginTop: "60px",
                     fontFamily: "Montserrat",
+                    fontSize: "30px",
                     fontWeight: 700,
-                    fontSize: "10px",
-                    backgroundColor: "#4CAF50",
+                    color: "#FA4A0C",
                   }}
                 >
-                  Register Now
-                </Button>
-                <Button
-                  variant="contained"
-                  type="reset"
-                  value="Reset"
+                  Free Combo Offer
+                </Typography>
+                <Typography
                   sx={{
-                    fontFamily: "Montserrat",
+                    fontFamily: "Robboto",
+                    fontSize: "18px",
                     fontWeight: 700,
-                    fontSize: "10px",
-                    backgroundColor: "red",
+                    color: "#5C5C5C",
+                    marginTop: "8px",
+                    // marginBottom: "-20px",
                   }}
                 >
-                  Reset
-                </Button>
-              </DialogActions>
-            </Form>
-          </>
-        )}
-      </Formik>
+                  College/School Students only-
+                </Typography>
+                <Typography
+                    variant="subtitle2"
+                    sx={{
+
+                  
+                      marginLeft: "3px",
+                      color: "#3e2723",
+                      fontFamily: "Montserrat",
+                      fontSize: "16px",
+                      fontWeight: 700,
+                      marginTop: '10px',
+                      marginBottom: "-25px",
+                      
+                    }}
+                  >
+                    *Only for first 100 Students who register. 
+                  </Typography>
+              </DialogTitle>
+              <Form>
+                <DialogContent>
+                  <Box
+                    component="form"
+                    sx={{
+                      "& > :not(style)": { m: 2, ml: -0.5, width: "100%" },
+                    }}
+                    noValidate
+                  >
+                    <FormControal
+                      control="input"
+                      type="text"
+                      label="Name"
+                      name="name"
+                    />
+                    <FormControal
+                      control="input"
+                      type="text"
+                      label="Mobile Number"
+                      name="mobile"
+                    />
+                    <FormControal
+                      control="input"
+                      type="text"
+                      label="School/College Name"
+                      name="college"
+                    />
+
+                    <FormControal
+                      control="select"
+                      label="Select your combo"
+                      name="combo"
+                      options={combolist}
+                    />
+                  </Box>
+                  <Typography
+                    variant="subtitle2"
+                    sx={{
+                      margin: "-5px",
+                      marginLeft: "5px",
+                      color: "#757575",
+                      fontFamily: "Montserrat",
+                      fontSize: "12px",
+                    }}
+                  >
+                    *One user can register only once else duplicate one will be
+                    considered cancelled
+                  </Typography>
+                </DialogContent>
+                <DialogActions>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{
+                      fontFamily: "Montserrat",
+                      fontWeight: 700,
+                      fontSize: "10px",
+                      backgroundColor: "#4CAF50",
+                    }}
+                  >
+                    Register Now
+                  </Button>
+                  <Button
+                    variant="contained"
+                    type="reset"
+                    value="Reset"
+                    sx={{
+                      fontFamily: "Montserrat",
+                      fontWeight: 700,
+                      fontSize: "10px",
+                      backgroundColor: "red",
+                    }}
+                  >
+                    Reset
+                  </Button>
+                </DialogActions>
+              </Form>
+            </>
+          )}
+        </Formik>
       </Box>
     </OffereStyle>
   );
