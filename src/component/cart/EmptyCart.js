@@ -10,7 +10,7 @@ const EmptyCart = () => {
         width: "80%",
         height: "65vh",
         background: "#fff",
-        margin: "80px 140px",
+        margin: "80px 140px", 
         marginTop: "100px",
       }}
     >

@@ -23,7 +23,7 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
     width: "100%",
     margin: "5px",
   },
-}));
+})); 
 
 function CartPrice({ countCartItem, totalAmount }) {
   const [order, setOrder] = useState(true);

@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import swal from 'sweetalert';
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormControal from "./FormControal";
@@ -113,7 +114,7 @@ function StuOffer() {
               .post(WEBAPP_URL)
               .then((res) => {
                 setTimeout(() => {
-                  alert(JSON.stringify("Registration completed successfully"));
+                  swal("Yay!","Registration completed Successfully!","success");;
                 }, 100);
                 console.log(payload);
                 resetForm({ payload: "" });

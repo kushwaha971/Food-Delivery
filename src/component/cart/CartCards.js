@@ -38,7 +38,7 @@ const CardStyle = styled(Box)(({ theme }) => ({
 
 const IncDcrStyle = styled(Box)(({ theme }) => ({
   marginLeft: "7px",
-  ".incrdcr": {
+  ".incrdcr": { 
     borderRadius: "15px",
     color: "#FA4A0C",
   },
@@ -53,7 +53,7 @@ function CartCards({ IncreaseItem, DecreaseItem, deleteItem, cart }) {
           rowSpacing={6}
           columnSpacing={{ xs: 2, sm: 2, md: 2 }}
           direction="row"
-          alignItems="center"
+          alignItems="center" 
           justifyContent="center"
           elevation={20}
         >
