@@ -114,7 +114,7 @@ function StuOffer() {
               .post(WEBAPP_URL)
               .then((res) => {
                 setTimeout(() => {
-                  swal("Yay!","Registration completed Successfully!","success");;
+                  swal("Your form is submitted!","","success");;
                 }, 100);
                 console.log(payload);
                 resetForm({ payload: "" });
