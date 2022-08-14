@@ -16,6 +16,7 @@ import maggie from "./menuImages/maggie.jpg";
 import potatoTwister from "./menuImages/potatoTwister.jpg";
 import coldCoffee from "./menuImages/coldcoffee.jpg";
 import hotBreverages from "./menuImages/hotbrevages.jpg";
+import combo from './menuImages/combo.jpg'
 import {Link} from 'react-scroll'
 
 
@@ -163,6 +164,23 @@ function MenuCard() {
                   sx={{ width: "150px", height: "40px", cursor: "pointer" }}
                 />
                  <Typography className="itemName">Hot Breverages</Typography>
+                </div>
+                </Link>
+              </Card>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={4} lg={2} md={2} spacing={1}>
+            <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
+              <Card variant="outlined" sx={{ borderRadius: "10px" }}>
+              <Link to = "combo" spy={true} smooth={true}>
+              <div style={{position:"relative"}}>
+                <CardMedia
+                  component="img"
+                  image={combo}
+                  sx={{ width: "150px", height: "40px", cursor: "pointer" }}
+                />
+                 <Typography className="itemName">Combo</Typography>
                 </div>
                 </Link>
               </Card>

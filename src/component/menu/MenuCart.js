@@ -1,18 +1,19 @@
-import React from "react";
-import {
-  Typography,
-  Box,
-  styled,
-  AppBar,
-  Toolbar,
-  Link,
-  Button,
-} from "@mui/material";
-
+import { AppBar, Box, Button, styled, Toolbar, Typography } from '@mui/material';
+import React from 'react'
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import EmptyCart from "./EmptyCart";
-import CartPrice from "./CartPrice";
-import CartCards from "./CartCards";
+import {Link} from 'react-router-dom'
+import EmptyCart from '../cart/EmptyCart';
+import CartItem from './CartItem';
+import MenuCartPrice from './MenuCartPrice';
+
+
+const MenuCartStyle = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    // marginLeft: theme.spacing(7),
+    // marginRight: "-25px",
+    align: "center",
+  },
+}));
 
 const ItemDetailed = styled(Box)(({ theme }) => ({
   width: "550px",
@@ -26,60 +27,38 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Caart = styled(Box)(({ theme }) => ({
+const MenuStyle = styled(Box)(({ theme }) => ({
+  marginTop: '100px',
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
-  width: "90%",
+  justifyContent: "coloumn",
+  width: "100%",
 
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
   },
 }));
 
-const CardStyle = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    marginLeft: theme.spacing(7),
-    marginRight: "-25px",
-    align: "center",
-  },
-}));
+function MenuCart({menuList,setMenuList}) {
 
-function Cart({ Item, cart, setCart, show, setShow }) {
-  // Increase Item in cart list
-  const IncreaseItem = (i) => {
-    const info = cart.map((item, indx) => {
+   // Increase Item in cart list
+   const IncreaseItem = (i) => {
+    const info = menuList.map((item, indx) => {
       if (indx === i && item.flag === true) {
         return {
           ...item,
           count: item.count + 1,
         }; 
       }
-      console.log(i, Item);
+      console.log(i, item);
       return item;
     });
-    setCart(info);
+    setMenuList(info);
   };
 
-  // Decrease Item in Cart list 
-
-  const DecreaseItem = (i) => {
-    const info = cart.map((item, indx) => {
-      if (i === indx && item.flag === true && item.count > 1) {
-        return {
-          ...item,
-          count: item.count - 1,
-        };
-      }
-      return item;
-    });
-
-    setCart(info);
-  };
-
-  // Remove Item from Cart
-  const deleteItem = (i) => {
-    const info = cart.map((item, indx) => {
+   // Remove Item from Cart
+   const deleteItem = (i) => {
+    const info = menuList.map((item, indx) => {
       if (indx === i && item.flag === true) {
         return {
           ...item,
@@ -90,28 +69,45 @@ function Cart({ Item, cart, setCart, show, setShow }) {
       return item;
     });
 
-    setCart(info);
+    setMenuList(info);
+  };
+
+  // Decrease Item in Cart list 
+   
+  const DecreaseItem = (i) => {
+    const info = menuList.map((item, indx) => {
+      if (i === indx && item.flag === true && item.count > 1) {
+        return {
+          ...item,
+          count: item.count - 1,
+        };
+      }
+      return item;
+    });
+
+    setMenuList(info);
   };
 
   // count no. item in cart
-  const countCartItem = cart.reduce(
-    (countCartItem, item) => countCartItem + item.count,
+  const countCartItem = menuList.reduce(
+    (countCartItem, item) => countCartItem + 1,
     0
   );
 
-  // Total Item
-  const totalAmount = cart.reduce(
-    (totalAmount, item) => totalAmount + item.price * item.count,
+
+   // Total Item
+   const totalAmount = menuList.reduce(
+    (totalAmount, item) => totalAmount + item.price,
     0 
   );
 
+
   return (
     <>
-      <>
-        <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
+       <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
           <Toolbar>
             <Button variant="primary" kind="flat" size="big" colorMode="light">
-              <Link className="links" onClick={() => setShow(!show)}>
+             <Link to="/menu">
                 <ArrowBackIcon style={{ fill: "black", fontSize: "30px" }} />
               </Link>
             </Button>
@@ -130,32 +126,35 @@ function Cart({ Item, cart, setCart, show, setShow }) {
             </Button>
           </Toolbar>
         </AppBar>
-      </>
-      {countCartItem === 0 ? (
+
+        
+      {countCartItem === -1 ? (
         <EmptyCart />
       ) : (
         <>
-          <Caart>
-            <CardStyle>
-              <CartCards
+          <MenuStyle>
+            <MenuCartStyle>
+              <CartItem
                 IncreaseItem={IncreaseItem}
                 DecreaseItem={DecreaseItem}
                 deleteItem={deleteItem}
-                cart={cart}
+                menuList={menuList}
+                countCartItem={countCartItem}
               />
-            </CardStyle>
+            </MenuCartStyle>
 
             <ItemDetailed>
-              <CartPrice
+              <MenuCartPrice
                 countCartItem={countCartItem}
                 totalAmount={totalAmount}
               />
             </ItemDetailed>
-          </Caart>
+          </MenuStyle>
         </>
       )}
+    
     </>
-  );
+  )
 }
 
-export default Cart;
+export default MenuCart
