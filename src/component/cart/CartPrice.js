@@ -4,11 +4,20 @@ import { useState } from "react";
 import PlaceOrder from "../PlaceOrder";
 
 const ItemDetailed = styled(Box)(({ theme }) => ({
+  margin: '20px',
+  
   ".header": {
     padding: "15px 20px",
   },
   ".price": {
     float: "right",
+  },
+  '.container':{
+    margin: '0px 200px',
+    [theme.breakpoints.down('md')]:{
+     margin: '0px 20px',
+    // margin: '0px'
+    },
   },
 
   ".totalamount": {
@@ -19,13 +28,13 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
     borderBottom: "1px dashed #e0e0e0",
   },
   ".placeOrder": {
-    background: "#f44336",
+    background: "#4caf50",
     width: "100%",
     margin: "5px",
   },
 })); 
 
-function CartPrice({ countCartItem, totalAmount }) {
+function CartPrice({ totalItem, totalAmount }) {
   const [order, setOrder] = useState(true);
   return (
     <>
@@ -43,7 +52,7 @@ function CartPrice({ countCartItem, totalAmount }) {
       {/* ...................................................................................... */}
 
       <ItemDetailed>
-        <Box>
+        <Box className="container">
           <Box className="header" style={{ borderBottom: "1px solid #f0f0f0" }}>
             <Typography
               sx={{
@@ -63,10 +72,10 @@ function CartPrice({ countCartItem, totalAmount }) {
                 fontSize: "16px",
               }}
             >
-              Price ({countCartItem} item)
+              Price ({totalItem} item)
               <span className="price">₹{totalAmount}</span>
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 fontWeight: 300,
                 fontFamily: "Roboto",
@@ -74,7 +83,7 @@ function CartPrice({ countCartItem, totalAmount }) {
               }}
             >
               Discount<span className="price">-₹{0}</span>
-            </Typography>
+            </Typography> */}
             <Typography
               sx={{
                 fontWeight: 300,
@@ -82,15 +91,15 @@ function CartPrice({ countCartItem, totalAmount }) {
                 fontSize: "16px",
               }}
             >
-              Delivery Charges<span className="price">₹40</span>
+              Delivery Charges may apply<span className="price"></span>
             </Typography>
             <Typography className="totalamount">
               Total Amount
-              <span className="price">₹{totalAmount - 0 + 40}</span>
+              <span className="price">₹{totalAmount}</span>
             </Typography>
-            <Typography sx={{ fontSize: 16, color: "green" }}>
+            {/* <Typography sx={{ fontSize: 16, color: "green" }}>
               You will save ₹{0} on this order
-            </Typography>
+            </Typography> */}
           </Box>
           <Button
             onClick={() => {
@@ -105,7 +114,7 @@ function CartPrice({ countCartItem, totalAmount }) {
               fontWeight: "700",
             }}
           >
-            Place Order
+            CHECKOUT
           </Button>
         </Box>
       </ItemDetailed>

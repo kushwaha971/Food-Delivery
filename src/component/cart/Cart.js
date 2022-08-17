@@ -62,7 +62,6 @@ function Cart({ Item, cart, setCart, show, setShow }) {
   };
 
   // Decrease Item in Cart list 
-
   const DecreaseItem = (i) => {
     const info = cart.map((item, indx) => {
       if (i === indx && item.flag === true && item.count > 1) {
@@ -89,7 +88,6 @@ function Cart({ Item, cart, setCart, show, setShow }) {
       }
       return item;
     });
-
     setCart(info);
   };
 
@@ -105,7 +103,7 @@ function Cart({ Item, cart, setCart, show, setShow }) {
     0 
   );
 
-  return (
+  return ( 
     <>
       <>
         <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>

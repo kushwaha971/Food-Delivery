@@ -1,160 +1,187 @@
-import { AppBar, Box, Button, styled, Toolbar, Typography } from '@mui/material';
-import React from 'react'
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import {Link} from 'react-router-dom'
-import EmptyCart from '../cart/EmptyCart';
-import CartItem from './CartItem';
-import MenuCartPrice from './MenuCartPrice';
+import {
+  Button,
+  styled,
+  Tabs,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+import { useState } from "react";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import CartPrice from "../cart/CartPrice";
 
+const buttonStyle = {
+  fontFamily: "Roboto",
+  fontSize: "10px",
+  fontWeight: 500,
+  padding: '-10px'
+};
 
-const MenuCartStyle = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    // marginLeft: theme.spacing(7),
-    // marginRight: "-25px",
-    align: "center",
+const MenuCartStyle = styled(Box)(({theme}) => ({
+  ".cart": {
+    fontFamily: "Robboto",
+    fontWeight: 700,
+  },
+  ".itemlist": {
+    display: "flex",
+    borderBottom: "1px dotted grey",
+    margin: "0px 250px",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingBottom: "5px",
+
+    [theme.breakpoints.down("md")]: {
+      margin: "0px 20px",
+    },
+  },
+
+  ".continueshoppinStyle": {
+    background: "#00c853",
+  },
+  ".nameStyle": {
+    fontSize: "12px",
+    fontFamily: "Poppins",
+    fontWeight: 700,
+    width: "130px",
+  },
+ 
+  ".btn": {
+    borderRadius: "30px",
+    background: '#f4511e',
+    color: 'white',
+    margin: '0px -20px',
+    
+    
+    
   },
 }));
 
-const ItemDetailed = styled(Box)(({ theme }) => ({
-  width: "550px",
-  padding: "25px",
-  background: "#ede7f6",
-  [theme.breakpoints.down("md")]: {
-    width: "250px",
-    marginBottom: "25px",
-    marginTop: "25px",
-    background: "none",
-  },
-}));
+function MenuCart({ items, setItems, open, setOpen }) {
+  items.map((item) => {
+    item["quantity"] = 1;
+    return item
+  }
 
-const MenuStyle = styled(Box)(({ theme }) => ({
-  marginTop: '100px',
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "coloumn",
-  width: "100%",
+  );
+  const [listedItem, setListedItem] = useState(items);
 
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-  },
-}));
-
-function MenuCart({menuList,setMenuList}) {
-
-   // Increase Item in cart list
-   const IncreaseItem = (i) => {
-    const info = menuList.map((item, indx) => {
-      if (indx === i && item.flag === true) {
+  // Increase Quantity
+  const IncreaseQuantity = (id) => {
+    const info = listedItem.map((item) => {
+      if (item.id === id) {
         return {
           ...item,
-          count: item.count + 1,
-        }; 
-      }
-      console.log(i, item);
-      return item;
-    });
-    setMenuList(info);
-  };
-
-   // Remove Item from Cart
-   const deleteItem = (i) => {
-    const info = menuList.map((item, indx) => {
-      if (indx === i && item.flag === true) {
-        return {
-          ...item,
-          flag: false,
-          count: 0,
+          quantity: item.quantity + 1,
         };
       }
       return item;
     });
-
-    setMenuList(info);
+    setListedItem(info);
   };
 
-  // Decrease Item in Cart list 
-   
-  const DecreaseItem = (i) => {
-    const info = menuList.map((item, indx) => {
-      if (i === indx && item.flag === true && item.count > 1) {
+  // Decrease Quantity
+  const DecreaseQuantity = (id) => {
+    const info = listedItem.map((item) => {
+      if (item.id === id && item.quantity > 1) {
         return {
           ...item,
-          count: item.count - 1,
+          quantity: item.quantity - 1,
         };
       }
       return item;
     });
-
-    setMenuList(info);
+    setListedItem(info);
   };
 
-  // count no. item in cart
-  const countCartItem = menuList.reduce(
-    (countCartItem, item) => countCartItem + 1,
+  //Total item in cart
+  const totalItem = listedItem.reduce(
+    (countCartItem, item) => countCartItem + item.quantity,
     0
   );
 
-
-   // Total Item
-   const totalAmount = menuList.reduce(
-    (totalAmount, item) => totalAmount + item.price,
-    0 
+  // Total Item
+  const totalAmount = listedItem.reduce(
+    (totalAmount, item) => totalAmount + item.price * item.quantity,
+    0
   );
 
-
   return (
-    <>
-       <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>
-          <Toolbar>
-            <Button variant="primary" kind="flat" size="big" colorMode="light">
-             <Link to="/menu">
-                <ArrowBackIcon style={{ fill: "black", fontSize: "30px" }} />
-              </Link>
-            </Button>
-            <Button variant="primary" kind="flat" size="big" colorMode="light">
-              <Typography
-                sx={{
-                  fontFamily: "Roboto",
-                  color: "#252B42",
-                  textTransform: "capitalize",
-                  fontSize: "25px",
-                  fontWeight: 700,
-                }}
-              >
-                My Cart
-              </Typography>
-            </Button>
-          </Toolbar>
-        </AppBar>
-
-        
-      {countCartItem === -1 ? (
-        <EmptyCart />
-      ) : (
+    <MenuCartStyle>
+      <Toolbar sx = {{marginBottom: '50px'}}>
+        <Typography variant="h5" className="cart">
+          My Cart
+        </Typography>
+        <Tabs
+          dislabled
+          sx={{ marginLeft: "auto" }}
+          TabIndicatorProps={{
+            style: {
+              display: "none",
+            },
+          }}
+          value={0}
+        >
+          <Button
+            color="inherit"
+            variant="contained"
+            className="continueshoppinStyle"
+            sx={{
+              marginLeft: "auto",
+              marginTop: "10px",
+              fontSize: "7px",
+              fontFamily: "Montserrat",
+              fontWeight: 600,
+            }}
+            onClick={() => setOpen(!open)}
+          >
+            View Full Menu
+          </Button>
+        </Tabs>
+      </Toolbar>
+      {listedItem.map((item) => (
         <>
-          <MenuStyle>
-            <MenuCartStyle>
-              <CartItem
-                IncreaseItem={IncreaseItem}
-                DecreaseItem={DecreaseItem}
-                deleteItem={deleteItem}
-                menuList={menuList}
-                countCartItem={countCartItem}
-              />
-            </MenuCartStyle>
+          {item.quantity > 0 && (
+            <Box className="itemlist" sx={{margin: '50px'}}>
+              <Typography id={item.id} className="nameStyle">
+                {item.name}
+              </Typography>
 
-            <ItemDetailed>
-              <MenuCartPrice
-                countCartItem={countCartItem}
-                totalAmount={totalAmount}
-              />
-            </ItemDetailed>
-          </MenuStyle>
+              <div>
+                <Button
+                  className="btn"
+                  variant = 'outlined'
+                  sx={buttonStyle}
+                  onClick={() => IncreaseQuantity(item.id)}
+                >
+                  {<AddIcon  sx ={{fontSize: '10px'} }/>}
+                </Button>
+                <Button id={item.id} 
+                  sx={{color: '#f4511e'}}
+                >
+                  {item.quantity}
+                </Button>
+                <Button
+                  sx={buttonStyle}
+                  variant = 'outlined'
+                  className="btn"
+                 
+                  onClick={() => DecreaseQuantity(item.id)}
+                >
+                  {<RemoveIcon sx ={{fontSize: '10px'} } />}
+                </Button>
+              </div>
+              <Typography id={item.id} sx={{fontFamily: "Poppins", }}>
+                ₹{item.price * item.quantity}
+              </Typography>
+            </Box>
+          )}
         </>
-      )}
-    
-    </>
-  )
+      ))}
+      <CartPrice totalItem={totalItem} totalAmount={totalAmount} />
+    </MenuCartStyle>
+  );
 }
 
-export default MenuCart
+export default MenuCart;
