@@ -1,10 +1,4 @@
-import {
-  Button,
-  styled,
-  Tabs,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { Button, styled, Tabs, Toolbar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useState } from "react";
@@ -16,10 +10,11 @@ const buttonStyle = {
   fontFamily: "Roboto",
   fontSize: "10px",
   fontWeight: 500,
-  padding: '-10px'
+  padding: "-10px",
+  // margin:'0px 5px'
 };
 
-const MenuCartStyle = styled(Box)(({theme}) => ({
+const MenuCartStyle = styled(Box)(({ theme }) => ({
   ".cart": {
     fontFamily: "Robboto",
     fontWeight: 700,
@@ -46,25 +41,20 @@ const MenuCartStyle = styled(Box)(({theme}) => ({
     fontWeight: 700,
     width: "130px",
   },
- 
+
   ".btn": {
-    borderRadius: "30px",
-    background: '#f4511e',
-    color: 'white',
-    margin: '0px -20px',
-    
-    
-    
+    borderRadius: "7px",
+    background: "#f4511e",
+    color: "white",
+    margin: "0px 10px",
   },
 }));
 
 function MenuCart({ items, setItems, open, setOpen }) {
   items.map((item) => {
     item["quantity"] = 1;
-    return item
-  }
-
-  );
+    return item;
+  });
   const [listedItem, setListedItem] = useState(items);
 
   // Increase Quantity
@@ -109,7 +99,7 @@ function MenuCart({ items, setItems, open, setOpen }) {
 
   return (
     <MenuCartStyle>
-      <Toolbar sx = {{marginBottom: '50px'}}>
+      <Toolbar sx={{ marginBottom: "50px" }}>
         <Typography variant="h5" className="cart">
           My Cart
         </Typography>
@@ -143,36 +133,40 @@ function MenuCart({ items, setItems, open, setOpen }) {
       {listedItem.map((item) => (
         <>
           {item.quantity > 0 && (
-            <Box className="itemlist" sx={{margin: '50px'}}>
+            <Box className="itemlist" sx={{ margin: "50px" }}>
               <Typography id={item.id} className="nameStyle">
                 {item.name}
               </Typography>
 
-              <div>
-                <Button
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                }}
+              >
+                <button
+                  sx={buttonStyle}
+                  variant="outlined"
                   className="btn"
-                  variant = 'outlined'
+                  onClick={() => DecreaseQuantity(item.id)}
+                >
+                  {<RemoveIcon sx={{ fontSize: "15px" }} />}
+                </button>
+
+                <Typography id={item.id} sx={{ color: "#f4511e" }}>
+                  {item.quantity}
+                </Typography>
+                <button
+                  className="btn"
+                  variant="outlined"
                   sx={buttonStyle}
                   onClick={() => IncreaseQuantity(item.id)}
                 >
-                  {<AddIcon  sx ={{fontSize: '10px'} }/>}
-                </Button>
-                <Button id={item.id} 
-                  sx={{color: '#f4511e'}}
-                >
-                  {item.quantity}
-                </Button>
-                <Button
-                  sx={buttonStyle}
-                  variant = 'outlined'
-                  className="btn"
-                 
-                  onClick={() => DecreaseQuantity(item.id)}
-                >
-                  {<RemoveIcon sx ={{fontSize: '10px'} } />}
-                </Button>
+                  {<AddIcon sx={{ fontSize: "15px" }} />}
+                </button>
               </div>
-              <Typography id={item.id} sx={{fontFamily: "Poppins", }}>
+              <Typography id={item.id} sx={{ fontFamily: "Poppins" }}>
                 ₹{item.price * item.quantity}
               </Typography>
             </Box>
