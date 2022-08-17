@@ -6,13 +6,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Recipe from "./component/Recipe";
 import Menu from "./component/menu/Menu";
 import StuOffer from "./component/offers/StuOffer";
-import MenuCart from "./component/menu/MenuCart";
-import menu from "./component/menu/MenuList";
+// import MenuCart from "./component/menu/MenuCart";
+// import MenuCart from "./component/menu/MenuCart";
+
 
 function App() {
   const [cart, setCart] = useState(Item);
   const [show, setShow] = useState(true);
-  const [menuList, setMenuList] = useState(menu);
+  
 
   return (
     <div className="App">
@@ -29,17 +30,17 @@ function App() {
                 setShow={setShow}
               />
             }
-          />
+          /> 
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/offer" element={<StuOffer />} />
           <Route
             path="/menu"
-            element={<Menu menuList={menuList} setMenuList={setMenuList} />}
+            element={<Menu/>}
           />
-          <Route
+          {/* <Route
             path="/OrderPlaced"
-            element={<MenuCart menuList={menuList} setMenuList={setMenuList} />}
-          />
+            element={<MenuCart/>}
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -51,7 +51,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={0}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "burger" spy={true} smooth={true}>
+              <Link to = "1" spy={true} smooth={true}>
                 <div style={{ position: "relative" }}>
                   <CardMedia
                     component="img"
@@ -71,7 +71,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={0}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "fenchfries" spy={true} smooth={true}>
+              <Link to = "7" spy={true} smooth={true}>
               <div style={{position: 'relative'}}>
                 <CardMedia
                   component="img"
@@ -88,7 +88,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={0}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "sandwich" spy={true} smooth={true}>
+              <Link to = "12" spy={true} smooth={true}>
               <div style={{position: "relative"}}>
                 <CardMedia
                   component="img"
@@ -105,7 +105,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={0}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "maggie" spy={true} smooth={true}>
+              <Link to = "19" spy={true} smooth={true}>
               <div style={{position:"relative"}}>
                 <CardMedia
                   component="img"
@@ -122,7 +122,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={0}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "potatoTwister" spy={true} smooth={true}>
+              <Link to = "27" spy={true} smooth={true}>
               <div style={{position:"relative"}}>
                 <CardMedia
                   component="img"
@@ -139,7 +139,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={1}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "coldCoffee" spy={true} smooth={true}>
+              <Link to = "32" spy={true} smooth={true}>
               <div style={{position:"relative"}}>
                 <CardMedia
                   component="img"
@@ -156,7 +156,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={1}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "hotBeverages" spy={true} smooth={true}>
+              <Link to = "38" spy={true} smooth={true}>
               <div style={{position:"relative"}}>
                 <CardMedia
                   component="img"
@@ -173,7 +173,7 @@ function MenuCard() {
           <Grid item xs={4} lg={2} md={2} spacing={1}>
             <Paper sx={{ maxWidth: 150, borderRadius: "10px" }} elevation={24}>
               <Card variant="outlined" sx={{ borderRadius: "10px" }}>
-              <Link to = "combo" spy={true} smooth={true}>
+              <Link to = "42" spy={true} smooth={true}>
               <div style={{position:"relative"}}>
                 <CardMedia
                   component="img"

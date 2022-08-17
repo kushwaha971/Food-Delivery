@@ -39,7 +39,7 @@ const CardStyle = styled(Box)(({ theme }) => ({
 const IncDcrStyle = styled(Box)(({ theme }) => ({
   marginLeft: "7px",
   ".incrdcr": { 
-    borderRadius: "15px",
+    borderRadius: "10px",
     color: "#FA4A0C",
   },
 }));
