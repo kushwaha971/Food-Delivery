@@ -88,7 +88,7 @@ function StuOffer() {
               <img src={logo} width={182} height={64} alt="" />
             </Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> 
         <Formik
           initialValues={{
             name: "",
@@ -129,7 +129,7 @@ function StuOffer() {
             <>
               <DialogTitle>
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   sx={{
                     marginTop: "60px",
                     fontFamily: "Montserrat",
@@ -147,7 +147,7 @@ function StuOffer() {
                     fontWeight: 700,
                     color: "#5C5C5C",
                     marginTop: "8px",
-                    // marginBottom: "-20px",
+                 
                   }}
                 >
                   College/School Students only-

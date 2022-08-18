@@ -1,22 +1,19 @@
 import React from "react";
-import { Typography, Box, styled, Button, Dialog } from "@mui/material";
-import { useState } from "react";
-import PlaceOrder from "../PlaceOrder";
+import { Typography, Box, styled, Button } from "@mui/material";
 
 const ItemDetailed = styled(Box)(({ theme }) => ({
-  margin: '20px',
-  
+  margin: "20px",
+
   ".header": {
     padding: "15px 20px",
   },
   ".price": {
     float: "right",
   },
-  '.container':{
-    margin: '0px 200px',
-    [theme.breakpoints.down('md')]:{
-     margin: '0px 20px',
-    // margin: '0px'
+  ".container": {
+    margin: "0px 200px",
+    [theme.breakpoints.down("md")]: {
+      margin: "0px 20px",
     },
   },
 
@@ -32,27 +29,30 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
     width: "100%",
     margin: "5px",
   },
-})); 
+}));
 
-function CartPrice({ totalItem, totalAmount }) {
-  const [order, setOrder] = useState(true);
+function CartPrice({ totalItem, totalAmount, itemName }) {
+
+  const orderedItem = {
+    'Items': itemName,
+    'Number of items': totalItem,
+    'Total Amount': totalAmount,
+  }
+
+  const handleSubmit = (event) => {
+    // console.log(orderedItem );
+    // console.log(orderedItem.Items);
+    // console.log(orderedItem['Number of items'])
+    event.preventDefault();
+    console.log(orderedItem);
+  
+  }
+    
+
   return (
     <>
-      {/* ...................................................................................... */}
-      <Dialog
-        fullScreen
-        open={!order}
-        onClose={() => {
-          setOrder(order);
-        }}
-        //  TransitionComponent={Transition}
-      >
-        <PlaceOrder order={order} setOrder={setOrder} />
-      </Dialog>
-      {/* ...................................................................................... */}
-
       <ItemDetailed>
-        <Box className="container">
+        <Box className="container"  >
           <Box className="header" style={{ borderBottom: "1px solid #f0f0f0" }}>
             <Typography
               sx={{
@@ -75,15 +75,6 @@ function CartPrice({ totalItem, totalAmount }) {
               Price ({totalItem} item)
               <span className="price">₹{totalAmount}</span>
             </Typography>
-            {/* <Typography
-              sx={{
-                fontWeight: 300,
-                fontFamily: "Roboto",
-                fontSize: "16px",
-              }}
-            >
-              Discount<span className="price">-₹{0}</span>
-            </Typography> */}
             <Typography
               sx={{
                 fontWeight: 300,
@@ -93,18 +84,14 @@ function CartPrice({ totalItem, totalAmount }) {
             >
               Delivery Charges may apply<span className="price"></span>
             </Typography>
+
             <Typography className="totalamount">
               Total Amount
               <span className="price">₹{totalAmount}</span>
             </Typography>
-            {/* <Typography sx={{ fontSize: 16, color: "green" }}>
-              You will save ₹{0} on this order
-            </Typography> */}
           </Box>
           <Button
-            onClick={() => {
-              setOrder(!order);
-            }}
+          type ='submit'
             className="placeOrder"
             variant="contained"
             sx={{
@@ -113,6 +100,8 @@ function CartPrice({ totalItem, totalAmount }) {
               fontSize: "15px",
               fontWeight: "700",
             }}
+
+            onClick ={handleSubmit}
           >
             CHECKOUT
           </Button>
