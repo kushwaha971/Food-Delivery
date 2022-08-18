@@ -14,7 +14,7 @@ function SelectItem(props) {
           fontStyle: "captlize",
           textTransform: "capitalize",
           marginLeft: "2px",
-          
+           
         }}
       >
         {label}

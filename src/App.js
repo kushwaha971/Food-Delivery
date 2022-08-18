@@ -6,8 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Recipe from "./component/Recipe";
 import Menu from "./component/menu/Menu";
 import StuOffer from "./component/offers/StuOffer";
-// import MenuCart from "./component/menu/MenuCart";
-// import MenuCart from "./component/menu/MenuCart";
+
 
 
 function App() {
@@ -31,16 +30,12 @@ function App() {
               />
             }
           /> 
-          <Route path="/recipe" element={<Recipe />} />
-          <Route path="/offer" element={<StuOffer />} />
+          <Route path="/recipe"  element={<Recipe />} />
+          <Route path="/offer"  element={<StuOffer />} />
           <Route
-            path="/menu"
+            path="/menu"  
             element={<Menu/>}
           />
-          {/* <Route
-            path="/OrderPlaced"
-            element={<MenuCart/>}
-          /> */}
         </Routes>
       </BrowserRouter>
     </div>

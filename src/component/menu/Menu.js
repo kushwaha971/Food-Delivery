@@ -82,7 +82,7 @@ function Menu() {
 
   
 
-  const itemList = [];
+  const itemList = []; 
 
    menu.map((item) =>{
     if(!item.title){
