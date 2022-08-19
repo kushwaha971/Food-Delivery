@@ -8,7 +8,7 @@ const Item = [
     flag: false,
     count: 0,
   },
-  {
+  { 
     id: 2,
     itemName: "Noodles",
     imageSrc:
@@ -35,24 +35,7 @@ const Item = [
     flag: false,
     count: 0,
   },
-  {
-    id: 5,
-    itemName: "Biryani",
-    imageSrc:
-      "https://butteroverbae.com/wp-content/uploads/2020/10/karachi-chicken-biryani-11-735x735.jpg",
-    price: 180,
-    flag: false,
-    count: 0,
-  },
-  {
-    id: 6,
-    itemName: "Coffee",
-    imageSrc:
-      "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg",
-    price: 79,
-    flag: false,
-    count: 0,
-  },
+ 
 ];
 
 export default Item;

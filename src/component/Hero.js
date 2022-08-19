@@ -3,7 +3,7 @@ import image from "./images/Hero.svg";
 import mobile from "./images/mobile.svg";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { Paper, Box, styled, Typography, Button } from "@mui/material";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const btnStyle = {
   color: "#FFFFFF",
@@ -103,7 +103,6 @@ const Mobile = styled(Box)(({ theme }) => ({
 }));
 
 function Hero() {
-
   return (
     <HeroStyle>
       <Paper
@@ -112,16 +111,27 @@ function Hero() {
         sx={{ marginTop: "90px", marginBottom: "265px" }}
       >
         <TextStyle>
-          {/* <Typography variant="h3" align="center" className="food">
-            Pluto
-          </Typography> */}
-
           <Typography variant="h1" align="center" className="slogan">
             Why stay hungry when you can order form Pluto
           </Typography>
 
           <Typography variant="h5" align="center" className="download">
-            Coming Soon in Varanasi with lowest price & best quality in city
+            Now in Varanasi with lowest price & best quality in city
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              fontFamily: "Montserrat",
+              color: "#FA4A0C",
+              // margin: "0px 10px",
+              fontSize: '13px',
+              fontWeight: '700',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            B30,2C-5, Lanka Assi road, Varanasi - 221005
           </Typography>
         </TextStyle>
 
@@ -135,7 +145,13 @@ function Hero() {
           }}
         >
           <Button variant="contained" sx={btnStyle}>
-           <Link to = "/offer" style={{textDecoration: 'none',color: '#ffff'}}> Students Offers</Link> 
+            <Link
+              to="/offer"
+              style={{ textDecoration: "none", color: "#ffff" }}
+            >
+              {" "}
+              Students Offers
+            </Link>
           </Button>
 
           <Button
