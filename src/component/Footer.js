@@ -43,7 +43,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
     },
   },
   ".slogan": {
-    paddingTop: "100px",
+    paddingTop: "80px",
     color: "#F7F7F7",
     fontFamily: "Montserrat",
     fontSize: "40px",
