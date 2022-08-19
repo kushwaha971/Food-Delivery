@@ -16,7 +16,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useState } from "react";
-// import CustomerDetail from "./CustomerDetail";
 import Empoloyee from "./employeeDetail/Empoloyee";
 import { Link } from "react-router-dom";
 
@@ -153,7 +152,7 @@ function Footer() {
           sx={{ marginTop: "10px" }}
         >
           <Typography variant="h2" align="center" className="slogan">
-            Will be live in August 2022
+            Your favourite food is here now.
           </Typography>
           {isMatch ? (
             <Typography variant="h4" align="center" className="download">

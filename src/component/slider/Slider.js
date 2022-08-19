@@ -119,7 +119,7 @@ function Slider() {
                 <CardMedia
                   component="img"
                   image={item.imageSrc}
-                  height="250px"
+                  height="360px"
                 />
               </Card>
               {/* <Typography className="benefits" align="center">

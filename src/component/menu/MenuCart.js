@@ -87,7 +87,7 @@ function MenuCart({ items, setItems, open, setOpen }) {
 
   // Total item name 
   const itemName = listedItem.reduce(
-      (itemList,item) => itemList + item.name + "(" +  item.quantity +  ")" + ",  " ,
+      (itemList,item) => itemList + item.name + "(" +  item.quantity +  ") , "   ,
   [])
 
   //Total item in cart
