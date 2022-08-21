@@ -95,7 +95,7 @@ const Mobile = styled(Box)(({ theme }) => ({
     marginTop: "-650px",
     zIndex: "1",
     [theme.breakpoints.down("md")]: {
-      marginTop: "-540px",
+      marginTop: "-520px",
       width: "350px",
       zIndex: "0",
     },
@@ -112,7 +112,7 @@ function Hero() {
       >
         <TextStyle>
           <Typography variant="h1" align="center" className="slogan">
-            Why stay hungry when you can order form Pluto
+            Why stay hungry when you can order from Pluto
           </Typography>
 
           <Typography variant="h5" align="center" className="download">
