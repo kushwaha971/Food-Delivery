@@ -33,7 +33,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
     },
   },
   ".btn": {
-    padding: "5px",
+    padding: "3px",
     width: "120px",
     borderRadius: "15px",
     margin: theme.spacing(1),
@@ -48,7 +48,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
     fontFamily: "Montserrat",
     fontSize: "40px",
     fontWeight: "700",
-    lineHeight: "50px",
+    lineHeight: "45px",
     letterSpacing: "1px",
 
     [theme.breakpoints.down("md")]: {
