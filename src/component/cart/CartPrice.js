@@ -32,12 +32,11 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
 }));
 
 function CartPrice({ totalItem, totalAmount, itemName }) {
-
   const orderedItem = {
-    'Items': itemName,
-    'Number of items': totalItem,
-    'Total Amount': totalAmount,
-  }
+    Items: itemName,
+    "Number of items": totalItem,
+    "Total Amount": totalAmount,
+  };
 
   const handleSubmit = (event) => {
     // console.log(orderedItem );
@@ -45,14 +44,12 @@ function CartPrice({ totalItem, totalAmount, itemName }) {
     // console.log(orderedItem['Number of items'])
     event.preventDefault();
     console.log(orderedItem);
-  
-  }
-    
+  };
 
   return (
     <>
       <ItemDetailed>
-        <Box className="container"  >
+        <Box className="container">
           <Box className="header" style={{ borderBottom: "1px solid #f0f0f0" }}>
             <Typography
               sx={{
@@ -91,7 +88,7 @@ function CartPrice({ totalItem, totalAmount, itemName }) {
             </Typography>
           </Box>
           <Button
-          type ='submit'
+            type="submit"
             className="placeOrder"
             variant="contained"
             sx={{
@@ -100,8 +97,7 @@ function CartPrice({ totalItem, totalAmount, itemName }) {
               fontSize: "15px",
               fontWeight: "700",
             }}
-
-            onClick ={handleSubmit}
+            onClick={handleSubmit}
           >
             CHECKOUT
           </Button>

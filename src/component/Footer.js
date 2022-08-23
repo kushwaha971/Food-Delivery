@@ -195,7 +195,7 @@ function Footer() {
                   background: "#FA4A0C",
                   fontSize: "13px",
                   fontFamily: "Montserrat",
-                  fontWeight: "700", 
+                  fontWeight: "700",
                 }}
               >
                 <Link

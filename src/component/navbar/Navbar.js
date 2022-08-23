@@ -144,10 +144,19 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                         kind="flat"
                         size="big"
                         colorMode="light"
+                        disableElevation
+                        disableRipple
+                        sx={{
+                          ml: 1,
+                          "&.MuiButtonBase-root:hover": {
+                            bgcolor: "transparent",
+                          },
+                        }}
                       >
                         <Link
                           exact
-                          spy={true} smooth={true}
+                          spy={true}
+                          smooth={true}
                           to="home"
                           onClick={() => setOpenDrawer(!openDrawer)}
                           style={drwerStyle}
@@ -176,10 +185,19 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                         kind="flat"
                         size="big"
                         colorMode="light"
+                        disableElevation
+                        disableRipple
+                        sx={{
+                          ml: 1,
+                          "&.MuiButtonBase-root:hover": {
+                            bgcolor: "transparent",
+                          },
+                        }}
                       >
                         <Link
                           exact
-                          spy={true} smooth={true}
+                          spy={true}
+                          smooth={true}
                           to="footer"
                           onClick={() => setOpenDrawer(!openDrawer)}
                           style={drwerStyle}
@@ -224,8 +242,22 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     kind="flat"
                     size="small"
                     colorMode="light"
+                    disableElevation
+                    disableRipple
+                    sx={{
+                      ml: 1,
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent",
+                      },
+                    }}
                   >
-                    <Link exact to="home" spy={true} smooth={true} className="links">
+                    <Link
+                      exact
+                      to="home"
+                      spy={true}
+                      smooth={true}
+                      className="links"
+                    >
                       Home
                     </Link>
                   </Button>
@@ -234,8 +266,22 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     kind="flat"
                     size="small"
                     colorMode="light"
+                    disableElevation
+                    disableRipple
+                    sx={{
+                      ml: 1,
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent",
+                      },
+                    }}
                   >
-                    <Link exact to="product" spy={true} smooth={true} className="links">
+                    <Link
+                      exact
+                      to="product"
+                      spy={true}
+                      smooth={true}
+                      className="links"
+                    >
                       Product
                     </Link>
                   </Button>
@@ -244,8 +290,22 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     kind="flat"
                     size="small"
                     colorMode="light"
+                    disableElevation
+                    disableRipple
+                    sx={{
+                      ml: 1,
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent",
+                      },
+                    }}
                   >
-                    <Link exact to="footer" spy={true} smooth={true} className="links">
+                    <Link
+                      exact
+                      to="footer"
+                      spy={true}
+                      smooth={true}
+                      className="links"
+                    >
                       Contact
                     </Link>
                   </Button>
@@ -254,8 +314,21 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                     kind="flat"
                     size="small"
                     colorMode="light"
+                    disableElevation
+                    disableRipple
+                    sx={{
+                      ml: 1,
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent",
+                      },
+                    }}
                   >
-                    <Link className="links" spy={true} smooth={true} onClick={() => setShow(!show)}>
+                    <Link
+                      className="links"
+                      spy={true}
+                      smooth={true}
+                      onClick={() => setShow(!show)}
+                    >
                       <ShoppingCartIcon
                         style={{ fill: "orange", fontSize: 30 }}
                       />

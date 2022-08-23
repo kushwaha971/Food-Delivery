@@ -123,9 +123,8 @@ function Hero() {
             sx={{
               fontFamily: "Montserrat",
               color: "#FA4A0C",
-              // margin: "0px 10px",
-              fontSize: '13px',
-              fontWeight: '700',
+              fontSize: "13px",
+              fontWeight: "700",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -149,7 +148,6 @@ function Hero() {
               to="/offer"
               style={{ textDecoration: "none", color: "#ffff" }}
             >
-              {" "}
               Students Offers
             </Link>
           </Button>
@@ -157,7 +155,7 @@ function Hero() {
           <Button
             style={{ backgroundColor: "#0026ca" }}
             href="https://goo.gl/maps/1Q8qzZvVbpF5T5c76"
-            target="_blank"
+            target="_blansk"
             variant="contained"
             className="btn"
             sx={btnStyle}

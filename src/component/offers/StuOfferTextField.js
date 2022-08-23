@@ -5,15 +5,15 @@ import TextError from "./TextError";
 function StuOfferTextField(props) {
   const { label, name, ...rest } = props;
   return (
-    <div >
+    <div>
       <label
         htmlFor={name}
         style={{
           fontFamily: "Montserrat",
           fontStyle: "captlize",
-          textTransform: "capitalize", 
+          textTransform: "capitalize",
           fontSize: "15px",
-          marginLeft: '2px'
+          marginLeft: "2px",
         }}
       >
         {label}

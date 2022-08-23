@@ -53,7 +53,7 @@ function Cart({ Item, cart, setCart, show, setShow }) {
         return {
           ...item,
           count: item.count + 1,
-        }; 
+        };
       }
       console.log(i, Item);
       return item;
@@ -61,7 +61,7 @@ function Cart({ Item, cart, setCart, show, setShow }) {
     setCart(info);
   };
 
-  // Decrease Item in Cart list 
+  // Decrease Item in Cart list
   const DecreaseItem = (i) => {
     const info = cart.map((item, indx) => {
       if (i === indx && item.flag === true && item.count > 1) {
@@ -100,10 +100,10 @@ function Cart({ Item, cart, setCart, show, setShow }) {
   // Total Item
   const totalAmount = cart.reduce(
     (totalAmount, item) => totalAmount + item.price * item.count,
-    0 
+    0
   );
 
-  return ( 
+  return (
     <>
       <>
         <AppBar color="inherit" elevation={0} sx={{ padding: "10px" }}>

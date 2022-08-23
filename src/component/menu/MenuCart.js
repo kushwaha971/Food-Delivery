@@ -5,7 +5,6 @@ import { useState } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import CartPrice from "../cart/CartPrice";
- 
 
 const buttonStyle = {
   fontFamily: "Roboto",
@@ -85,14 +84,15 @@ function MenuCart({ items, setItems, open, setOpen }) {
     setListedItem(info);
   };
 
-  // Total item name 
+  // Total item name
   const itemName = listedItem.reduce(
-      (itemList,item) => itemList + item.name + "(" +  item.quantity +  ") , "   ,
-  [])
+    (itemList, item) => itemList + item.name + "(" + item.quantity + ") , ",
+    []
+  );
 
   //Total item in cart
   const totalItem = listedItem.reduce(
-    (countCartItem, item) => countCartItem +  item.quantity,
+    (countCartItem, item) => countCartItem + item.quantity,
     0
   );
 
@@ -101,8 +101,6 @@ function MenuCart({ items, setItems, open, setOpen }) {
     (totalAmount, item) => totalAmount + item.price * item.quantity,
     0
   );
-
-
 
   return (
     <MenuCartStyle>
@@ -141,9 +139,7 @@ function MenuCart({ items, setItems, open, setOpen }) {
         <>
           {item.quantity > 0 && (
             <Box className="itemlist" sx={{ margin: "50px" }}>
-              <Typography
-                id={item.id}
-                className="nameStyle">
+              <Typography id={item.id} className="nameStyle">
                 {item.name}
               </Typography>
 
@@ -182,7 +178,11 @@ function MenuCart({ items, setItems, open, setOpen }) {
           )}
         </>
       ))}
-      <CartPrice totalItem={totalItem} totalAmount={totalAmount} itemName = {itemName}   />
+      <CartPrice
+        totalItem={totalItem}
+        totalAmount={totalAmount}
+        itemName={itemName}
+      />
     </MenuCartStyle>
   );
 }

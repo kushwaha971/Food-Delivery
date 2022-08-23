@@ -25,7 +25,7 @@ const MenuStyle = styled(Box)(({ theme }) => ({
     padding: "10px",
     margin: "10px",
     marginLeft: "-20px",
-    marginBottom: '100px'
+    marginBottom: "100px",
   },
 
   ".recipeHeading": {
@@ -34,7 +34,7 @@ const MenuStyle = styled(Box)(({ theme }) => ({
     fontWeight: "400",
     textTransform: "capitalize",
     color: "#424242",
-    marginTop: '35px',
+    marginTop: "35px",
   },
   ".receipeList": {
     fontFamily: "Montserrat",
@@ -75,37 +75,34 @@ const MenuStyle = styled(Box)(({ theme }) => ({
 }));
 
 function Menu() {
-  
-
   const [open, setOpen] = useState(false);
   const [selectedItems, setSelecetedItems] = useState([]);
 
-  
+  const itemList = [];
 
-  const itemList = []; 
-
-   menu.map((item) =>{
-    if(!item.title){
+  menu.map((item) => {
+    if (!item.title) {
       itemList.push({
-        id:item.id,
+        id: item.id,
         name: item.name,
         price: item.price,
-      })
+      });
     }
-    return item
-  })
-
+    return item;
+  });
 
   const handleItemUpdated = (id, checked) => {
     console.log("updated", id, checked);
     console.log("Cart before", selectedItems);
     let updatedCart = [];
     if (!checked) {
-      updatedCart = selectedItems.filter((item) => parseInt(item.id) !== parseInt(id));
-    } 
-    else 
-    {
-      const selectedItem = itemList.filter((item) => parseInt(item.id) === parseInt(id));
+      updatedCart = selectedItems.filter(
+        (item) => parseInt(item.id) !== parseInt(id)
+      );
+    } else {
+      const selectedItem = itemList.filter(
+        (item) => parseInt(item.id) === parseInt(id)
+      );
       updatedCart = [...selectedItem, ...selectedItems];
     }
 
@@ -172,12 +169,21 @@ function Menu() {
               fontWeight: "700",
             }}
             // onClick = {() => AddToCart()}
-            onClick={() => setOpen(!open)}> Place Order
+            onClick={() => setOpen(!open)}
+          >
+            {" "}
+            Place Order
           </Fab>
         </Box>
       </MenuStyle>
       <Dialog fullScreen open={open}>
-        <MenuCart  items = {selectedItems} setItems = {setSelecetedItems} open = {open} setOpen = {setOpen} handleClick = {handleClick } />
+        <MenuCart
+          items={selectedItems}
+          setItems={setSelecetedItems}
+          open={open}
+          setOpen={setOpen}
+          handleClick={handleClick}
+        />
       </Dialog>
     </>
   );
