@@ -9,7 +9,7 @@ import {
 import { Box } from "@mui/system";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import logo from "./../images/BellaLogo.png";
-const blank = "_blank"
+const blank = "_blank";
 const OffereStyle = styled(Box)(({ theme }) => ({
   margin: "10px",
   padding: "5px",
@@ -39,7 +39,6 @@ function OfferClosed() {
           </Toolbar>
         </AppBar>
         <DialogTitle>
-
           <Typography
             variant="h4"
             sx={{
@@ -83,7 +82,7 @@ function OfferClosed() {
               marginTop: "40px",
             }}
           >
-            Keep connected and follow us on Instagram:{" "}  
+            Keep connected and follow us on Instagram:{" "}
             <span>
               <a
                 href="https://www.instagram.com/pluto_india_food/tagged/"
@@ -93,13 +92,14 @@ function OfferClosed() {
                   color: "#ff5722",
                   textDecoration: "none",
                 }}
-              > <InstagramIcon sx={{height: '19px',color:'red'}} />
+              >
+                {" "}
+                <InstagramIcon sx={{ height: "19px", color: "red" }} />
                 {"  "}
-                   pluto_india_food
+                pluto_india_food
               </a>
             </span>
           </Typography>
-        
         </DialogTitle>
       </Box>
     </OffereStyle>

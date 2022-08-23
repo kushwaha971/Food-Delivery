@@ -8,7 +8,7 @@ const Item = [
     flag: false,
     count: 0,
   },
-  { 
+  {
     id: 2,
     itemName: "Noodles",
     imageSrc:
@@ -35,7 +35,6 @@ const Item = [
     flag: false,
     count: 0,
   },
- 
 ];
 
 export default Item;

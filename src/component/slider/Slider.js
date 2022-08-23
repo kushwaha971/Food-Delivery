@@ -7,7 +7,6 @@ import Arrow from "./Arrow";
 import { useEffect } from "react";
 
 const SliderStyle = styled(Box)(({ theme }) => ({
- 
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -16,7 +15,6 @@ const SliderStyle = styled(Box)(({ theme }) => ({
   position: "relative",
   [theme.breakpoints.down("md")]: {
     marginTop: "-100px",
-    
   },
 
   ".containerSlider": {
@@ -125,13 +123,13 @@ function Slider() {
               {/* <Typography className="benefits" align="center">
                 {item.itemName}
               </Typography>  */}
-
               {/* <Typography className="description" align="center">
                 {item.desc}
               </Typography> */}
               {/* <Typography className="offer" align="center">
                 {item.offer}
               </Typography> */}
+              
             </div>
           );
         })}

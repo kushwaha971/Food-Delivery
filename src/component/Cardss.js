@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardMedia,
   Container,
-  Grid, 
+  Grid,
   Typography,
   Paper,
   IconButton,
@@ -21,7 +21,7 @@ import logo from "./images/BellaLogo.png";
 const cardNameStyle = {
   fontFamily: "Roboto",
   color: "#252B42",
-  fontSize: "20px", 
+  fontSize: "20px",
   fontWeight: 600,
 };
 const cardPriceStyle = {
@@ -49,12 +49,12 @@ function Cardss({ cart, setCart }) {
           ...item,
           flag: true,
           count: 1,
-        }; 
+        };
       }
       return item;
     });
 
-    setCart(info); 
+    setCart(info);
   };
 
   return (
@@ -65,7 +65,7 @@ function Cardss({ cart, setCart }) {
           spacing={2}
           columnSpacing={{ xs: 1, sm: 2, md: 2 }}
           direction="row"
-          alignItems="center" 
+          alignItems="center"
           justifyContent="center"
         >
           {cart.map((probs, indx) => (

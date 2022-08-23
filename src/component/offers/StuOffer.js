@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormControal from "./FormControal";
@@ -88,7 +88,7 @@ function StuOffer() {
               <img src={logo} width={182} height={64} alt="" />
             </Typography>
           </Toolbar>
-        </AppBar> 
+        </AppBar>
         <Formik
           initialValues={{
             name: "",
@@ -114,7 +114,7 @@ function StuOffer() {
               .post(WEBAPP_URL)
               .then((res) => {
                 setTimeout(() => {
-                  swal("Your form is submitted!","","success");;
+                  swal("Your form is submitted!", "", "success");
                 }, 100);
                 console.log(payload);
                 resetForm({ payload: "" });
@@ -147,28 +147,24 @@ function StuOffer() {
                     fontWeight: 700,
                     color: "#5C5C5C",
                     marginTop: "8px",
-                 
                   }}
                 >
                   College/School Students only-
                 </Typography>
                 <Typography
-                    variant="subtitle2"
-                    sx={{
-
-                  
-                      marginLeft: "3px",
-                      color: "#3e2723",
-                      fontFamily: "Montserrat",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      marginTop: '10px',
-                      marginBottom: "-37px",
-                      
-                    }}
-                  >
-                    *Only for first 100 Students who register. 
-                  </Typography>
+                  variant="subtitle2"
+                  sx={{
+                    marginLeft: "3px",
+                    color: "#3e2723",
+                    fontFamily: "Montserrat",
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    marginTop: "10px",
+                    marginBottom: "-37px",
+                  }}
+                >
+                  *Only for first 100 Students who register.
+                </Typography>
               </DialogTitle>
               <Form>
                 <DialogContent>

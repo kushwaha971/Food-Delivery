@@ -1,8 +1,8 @@
 // import React from "react";
-import plutoImg_1 from '../images/plutoImage/plutoImg(1).jpg'
-import plutoImg_2 from '../images/plutoImage/plutoImg(2).jpg'
-import plutoImg_3 from '../images/plutoImage/plutoImg(3).jpg'
-import plutoImg_4 from '../images/plutoImage/plutoImg(4).jpg'
+import plutoImg_1 from "../images/plutoImage/plutoImg(1).jpg";
+import plutoImg_2 from "../images/plutoImage/plutoImg(2).jpg";
+import plutoImg_3 from "../images/plutoImage/plutoImg(3).jpg";
+import plutoImg_4 from "../images/plutoImage/plutoImg(4).jpg";
 const sliderItem = [
   {
     id: 1,
@@ -32,7 +32,6 @@ const sliderItem = [
     imageSrc: plutoImg_4,
     offer: " Lorem ipsum dolor sit dfgfjd consectetur adipisicing elit.",
   },
-
 ];
 
 export default sliderItem;
