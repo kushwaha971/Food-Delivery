@@ -5,8 +5,8 @@ import Item from "./component/Item";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Recipe from "./component/Recipe";
 import Menu from "./component/menu/Menu";
-import StuOffer from "./component/offers/StuOffer";
-// import OfferClosed from "./component/offers/OfferClosed";
+// import StuOffer from "./component/offers/StuOffer";
+import OfferClosed from "./component/offers/OfferClosed";
 
 function App() {
   const [cart, setCart] = useState(Item);
@@ -29,7 +29,7 @@ function App() {
             }
           />
           <Route path="/recipe" exact="true" element={<Recipe />} />
-          <Route path="/offer" element={<StuOffer />} />
+          <Route path="/offer" element={<OfferClosed />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>
       </BrowserRouter>

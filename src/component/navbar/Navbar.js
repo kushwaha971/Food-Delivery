@@ -125,14 +125,14 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       </Toolbar>
                     </AppBar>
                     <ListItemButton
-                      disableElevation
-                      disableRipple
-                      sx={{
-                        ml: 1,
-                        "&.MuiButtonBase-root:hover": {
-                          bgcolor: "transparent",
-                        },
-                      }}
+                      // disableElevation
+                      // disableRipple
+                      // sx={{
+                      //   ml: 1,
+                      //   "&.MuiButtonBase-root:hover": {
+                      //     bgcolor: "transparent",
+                      //   },
+                      // }}
                       style={{
                         direction: "flex",
                         flexDirection: "column",
@@ -309,7 +309,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                       Contact
                     </Link>
                   </Button>
-                  <Button
+                  {/* <Button
                     variant="primary"
                     kind="flat"
                     size="small"
@@ -333,7 +333,7 @@ function Navbar({ Item, cart, setCart, show, setShow }) {
                         style={{ fill: "orange", fontSize: 30 }}
                       />
                     </Link>
-                  </Button>
+                  </Button> */}
                 </Tabs>
               </>
             )}
