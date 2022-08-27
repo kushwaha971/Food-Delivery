@@ -37,7 +37,7 @@ function OfferClosed() {
               <img src={logo} width={182} height={64} alt="" />
             </Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> 
         <DialogTitle>
           <Typography
             variant="h4"
