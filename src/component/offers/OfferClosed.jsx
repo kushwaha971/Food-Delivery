@@ -82,7 +82,7 @@ function OfferClosed() {
               marginTop: "40px",
             }}
           >
-            Keep connected and follow us on Instagram:{" "}
+            Keep connected and follow us on Instagram:<br></br>{" "}
             <span>
               <a
                 href="https://www.instagram.com/pluto_india_food/tagged/"
