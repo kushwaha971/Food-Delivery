@@ -92,7 +92,7 @@ function OfferClosed() {
                   color: "#ff5722",
                   textDecoration: "none",
                 }}
-              >
+              > 
                 {" "}
                 <InstagramIcon sx={{ height: "19px", color: "red" }} />
                 {"  "}

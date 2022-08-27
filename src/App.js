@@ -5,7 +5,6 @@ import Item from "./component/Item";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Recipe from "./component/Recipe";
 import Menu from "./component/menu/Menu";
-// import StuOffer from "./component/offers/StuOffer";
 import OfferClosed from "./component/offers/OfferClosed";
 
 function App() {
