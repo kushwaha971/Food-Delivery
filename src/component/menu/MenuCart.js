@@ -5,6 +5,7 @@ import { useState } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import CartPrice from "../cart/CartPrice";
+import EmptyMenu from "./EmptyMenu";
 
 const buttonStyle = {
   fontFamily: "Roboto",
@@ -49,7 +50,7 @@ const MenuCartStyle = styled(Box)(({ theme }) => ({
   },
 }));
 
-function MenuCart({ items, setItems, open, setOpen }) {
+export default function MenuCart({ items, setItems, open, setOpen }) {
   items.map((item) => {
     item["quantity"] = 1;
     return item;
@@ -178,13 +179,22 @@ function MenuCart({ items, setItems, open, setOpen }) {
           )}
         </>
       ))}
-      <CartPrice
-        totalItem={totalItem}
-        totalAmount={totalAmount}
-        itemName={itemName}
-      />
+
+      {totalItem === 0 ? (
+        <>{<EmptyMenu open={open} setOpen={setOpen} />} </>
+      ) : (
+        <>
+          {                    
+            <CartPrice               
+              totalItem={totalItem}
+              totalAmount={totalAmount}
+              itemName={itemName}
+              open={open} 
+              setOpen={setOpen}
+            />
+          }
+        </>
+      )}
     </MenuCartStyle>
   );
 }
-
-export default MenuCart;

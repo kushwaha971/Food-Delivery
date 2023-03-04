@@ -18,7 +18,7 @@ import {
 import { Link } from "react-scroll";
 import React, { useState } from "react";
 import logo from "./../images/BellaLogo.png";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Hero from "./../Hero";
 import MenuIcon from "@mui/icons-material/Menu";
 import Footer from "../Footer";

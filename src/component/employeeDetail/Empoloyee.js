@@ -18,6 +18,7 @@ const EmployeeStyle = styled(Box)(({ theme }) => ({
 }));
 
 function Empoloyee({ employeeDetail, setEmployeeDetail }) {
+
   const validate = Yup.object({
     name: Yup.string().required("Required"),
     mobile: Yup.string().required("Required"),
@@ -25,6 +26,7 @@ function Empoloyee({ employeeDetail, setEmployeeDetail }) {
     pan: Yup.string().required("Required"),
     address: Yup.string().required("Required"),
   });
+  
   return (
     <EmployeeStyle>
       <Formik
