@@ -5,6 +5,7 @@ import MenuCard from "./MenuCard";
 import MenuCart from "./MenuCart";
 import menu from "./MenuList";
 
+
 const spanStyle = {
   fontSize: "14px",
   fontFamily: "Montserrat",
@@ -125,7 +126,7 @@ function Menu() {
         <Box style={{ margin: "25px" }}>
           <MenuCard />
         </Box>
-        <Box style={{ margin: "25px", marginTop: "130px" }}>
+        <Box style={{ margin: "15px", marginTop: "130px" }}>
           <div className="paperStyle">
             <Box id="burger" className="container">
               {menu.map((item) => (
@@ -145,7 +146,6 @@ function Menu() {
                     >
                       <input
                         id={item.id}
-                        // value={item.name}
                         type="checkbox"
                         onChange={handleClick}
                       />
@@ -153,13 +153,19 @@ function Menu() {
                         {`${item.name}- ${item.price}`}
                       </span>
                     </div>
-                  )}
+                  )}         
                 </>
               ))}
             </Box>
           </div>
+          <hr />
+        </Box>
+       
+        <Box>
+       
         </Box>
         <Box className="fab">
+
           <Fab
             variant="extended"
             sx={{
@@ -168,11 +174,11 @@ function Menu() {
               fontFamily: "Montserrat",
               fontWeight: "700",
             }}
-            // onClick = {() => AddToCart()}
-            onClick={() => setOpen(!open)}
+            
+            onClick={() => {setOpen(!open)}}
           >
-            {" "}
             Place Order
+            
           </Fab>
         </Box>
       </MenuStyle>

@@ -193,9 +193,9 @@ function Footer() {
                 sx={{
                   textTransform: "capitalize",
                   background: "#FA4A0C",
-                  fontSize: "13px",
-                  fontFamily: "Montserrat",
-                  fontWeight: "700",
+                  fontSize: "12px",
+                  fontFamily: "Poppins",
+                  fontWeight: "600",
                 }}
               >
                 <Link
@@ -252,7 +252,7 @@ function Footer() {
                 fontWeight: "700",
               }}
             >
-              Copywright 2022 Pluto India Foods
+              Copywright 2023 Pluto India Foods
             </Typography>
           )}
         </Toolbar>
@@ -270,7 +270,7 @@ function Footer() {
               paddingBottom: "5px",
             }}
           >
-            Copywright 2022 Pluto India Foods
+            Copywright 2023 Pluto India Foods
           </Typography>
         ) : (
           ""

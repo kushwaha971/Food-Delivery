@@ -145,10 +145,10 @@ function Hero() {
         >
           <Button variant="contained" sx={btnStyle}>
             <Link
-              to="/offer"
+              to="/menu"
               style={{ textDecoration: "none", color: "#ffff" }}
             >
-              Students Offers
+              Menu
             </Link>
           </Button>
 

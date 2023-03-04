@@ -17,9 +17,6 @@ const ArrowStyle = styled(Box)(({ theme }) => ({
     fontSize: "40px",
     fontWeight: "bold",
     borderRadius: "5px 0px 0px 5px",
-    // [theme.breakpoints.dowm('md')]:{
-    //     marginLeft: '10px',
-    // },
     [theme.breakpoints.down("md")]: {
       marginLeft: theme.spacing(1),
     },

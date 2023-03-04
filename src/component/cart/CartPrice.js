@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Box, styled, Button } from "@mui/material";
+// import CustomerDetail from "../menu/CustomerDetail";
 
 const ItemDetailed = styled(Box)(({ theme }) => ({
   margin: "20px",
@@ -31,7 +32,7 @@ const ItemDetailed = styled(Box)(({ theme }) => ({
   },
 }));
 
-function CartPrice({ totalItem, totalAmount, itemName }) {
+function CartPrice({ totalItem, totalAmount, itemName, open,setOpen}) {
   const orderedItem = {
     Items: itemName,
     "Number of items": totalItem,
@@ -87,6 +88,8 @@ function CartPrice({ totalItem, totalAmount, itemName }) {
               <span className="price">₹{totalAmount}</span>
             </Typography>
           </Box>
+
+        
           <Button
             type="submit"
             className="placeOrder"
